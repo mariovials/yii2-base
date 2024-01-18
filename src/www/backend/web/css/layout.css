@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --color-1: #00897b;
+  --color-1-dark: #00796B;
+  --background-1: #E0F2F1;
+}
+
+* {
+  font-family: "Noto Sans", "Tahoma", sans-serif;
+}
+
+#pagina {
+  background: #ECEFF1;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  background: #FFF;
+  box-shadow: 0 0.4em 0.5em -0.8em #000;
+}
+#header > div {
+  display: flex;
+}
+
+#logo img {
+  height: 4rem;
+}
+
+#principal {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 1em 0;
+  min-height: calc(100vh - 4rem);
+}
+
+#cuerpo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 0 0 1em;
+  width: calc(100% - 15.2em);
+}
+
+#contenido {
+  width: 100%;
+  margin-right: 1em;
+}
+
+#main {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#lateral {
+  background: #FFF;
+  width: 16rem;
+  min-width: 16rem;
+  max-width: 16rem;
+  border-radius: 0.6em;
+  padding: 1.5em 1em 1em 1em;
+  font-size: 0.9em;
+  min-height: calc(100vh - 6.5em);
+}
+#lateral .divider {
+  border: 1px solid #EEEEEE;
+  height: 0.01px;
+  border-radius: 1em;
+  margin: 1.2em;
+  border-bottom-color: #F3F3F3;
+}
+#lateral .btn, #lateral .btn-flat {
+  box-shadow: 0 0.1em 0.2em -0.1em #000;
+}
+#lateral .btn:hover {
+  box-shadow: 0 0.1em 0.2em -0.1em #000, 0 0.2em 0.5em -0.3em #000;
+}
+#lateral .btn:hover:active {
+  box-shadow: 0 0.05em 0.2em -0.1em #000;
+}
+#lateral .principal {
+  margin-bottom: 1em;
+}
+#lateral .principal .btn, #lateral .principal btn-flat {
+  font-size: 1rem;
+  margin-bottom: 0.3em;
+}
+#lateral .secundario {
+  font-size: 0.95em;
+}
+#lateral .secundario > .titulo {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: #424242;
+}
+#lateral .secundario > .titulo .mdi {
+  font-size: 1.1em;
+  margin-right: 0.3em;
+  color: #616161;
+}
+#lateral .link {
+  padding: 0.6em 1em;
+  display: block;
+  font-weight: 500;
+  border-radius: 0.3em;
+  margin-bottom: 0.2em;
+  color: #456453;
+  position: relative;
+}
+#lateral .link .numero {
+  position: absolute;
+  right: 0.8em;
+  padding: 0.1em 0.5em;
+  border-radius: 2em;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #757575;
+  background: rgba(0, 0, 0, 0.0666666667);
+}
+#lateral .link .mdi {
+  font-size: 1.4em;
+  line-height: 1em;
+  vertical-align: text-top;
+  margin-right: 0.1em;
+}
+#lateral .link:hover {
+  background: #EEE;
+}
+#lateral .link.activo {
+  background: #E7E7E7;
+}
+
+#opciones {
+  display: flex;
+  background: #CFD8DC;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  border-radius: 0.6em;
+}
+#opciones .opcion a {
+  margin-bottom: 0;
+  margin-right: 0.5em;
+  height: 3em;
+}
+#opciones .opcion .mdi {
+  font-size: 1.4rem;
+  margin-right: 0.1em;
+}
+
+#menu {
+  min-width: 14rem;
+  border-radius: 0 0.6em 0.6em 0;
+  padding: 1em 0.5em;
+  background: #FFF;
+  height: calc(100vh - 6em);
+}
+#menu ul li {
+  margin-bottom: 0.2rem;
+}
+#menu ul li.divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0.5em 1em;
+}
+#menu ul li a {
+  font-weight: 500;
+  color: #555;
+  padding: 0.3em 1em;
+  display: flex;
+  align-items: center;
+  border-radius: 2em;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+#menu ul li a .numero {
+  position: absolute;
+  right: 0.8em;
+  padding: 0.1em 0.5em;
+  border-radius: 2em;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #757575;
+}
+#menu ul li a .chevron {
+  position: absolute;
+  right: 2.5em;
+  padding: 0.1em 0.5em;
+  border-radius: 2em;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #757575;
+}
+#menu ul li a .chevron:hover {
+  background: rgba(0, 0, 0, 0.0666666667);
+}
+#menu ul li a .chevron .mdi {
+  margin-right: 0;
+}
+#menu ul li a .mdi {
+  margin-right: 0.3em;
+  font-size: 1.6em;
+}
+#menu ul li a.activo {
+  background: rgba(96, 125, 139, 0.2);
+  color: #424242;
+}
+#menu ul li a.activo .numero {
+  background: rgba(0, 0, 0, 0.1333333333);
+  color: #455A64;
+}
+#menu ul li a:hover {
+  background: rgba(96, 125, 139, 0.1333333333);
+}
+#menu ul li ul {
+  margin: -2em 0em 1em 1em;
+  border-left: 2px solid #CFD8DC;
+  padding: 2.2em 0.5em 0em 0.2em;
+  transition: all 400ms;
+  overflow: hidden;
+}
+#menu ul li ul.cerrado {
+  height: 0px !important;
+  border-color: #ECEFF1;
+  margin-bottom: 0;
+  transition: all 400ms;
+}
+#menu ul li ul li a {
+  padding: 0.4em 2.2em 0.4em 1em;
+  font-size: 0.9em;
+  border-radius: 2em;
+  line-height: 1em;
+}
+#menu ul li ul li a i.mdi {
+  font-size: 1.3em;
+}
+#menu ul li ul li a.activo {
+  background: #CFD8DC;
+}
+#menu ul li ul li:last-child {
+  margin-bottom: 0;
+}
+
+#botones-usuario {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#botones-usuario > li {
+  position: relative;
+  margin: 0.3em;
+}
+#botones-usuario > li .desplegable {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+#botones-usuario > li.activo #boton-usuario {
+  outline: 2px solid #CCC;
+}
+#botones-usuario > li.activo ul {
+  display: block;
+}
+
+#menu-usuario #boton-usuario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.2em 1em 0.2em 2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  user-select: none;
+  color: #555555;
+  font-weight: 500;
+}
+#menu-usuario #boton-usuario:hover {
+  background: rgba(0, 0, 0, 0.0666666667);
+}
+#menu-usuario #boton-usuario img {
+  border-radius: 50%;
+  height: 3em;
+  margin-left: 1em;
+  display: block;
+}
+#menu-usuario ul {
+  display: none;
+  background: #FFF;
+  border-radius: 0.5em;
+  margin-top: 0.5em;
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.4666666667);
+  padding: 0.5em 0;
+  margin-right: 0.5em;
+}
+#menu-usuario ul li a {
+  display: flex;
+  padding: 1em;
+}
+#menu-usuario ul li a .mdi {
+  margin-right: 0.5em;
+}
+#menu-usuario ul li a:hover {
+  background: #EEE;
+}
+
+/*# sourceMappingURL=layout.css.map */

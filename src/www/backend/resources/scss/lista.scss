@@ -1,0 +1,205 @@
+@import '../../../common/resources/scss/vars.scss';
+
+div.lista {
+  &.compacta {
+    .items .item {
+      height: 2.6em;
+    }
+  }
+  > header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 1em;
+    letter-spacing: -0.02em;
+    padding: 0 1rem;
+    .cantidad {
+      color: #9E9E9E;
+    }
+    .sorter {
+      display: flex;
+    }
+  }
+  .items {
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4em 1em;
+      // height: 4em;
+      .informacion {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        .icono {
+          padding: 0 0.6em 0 0;
+          font-size: 1.5em;
+          color: #00796B;
+        }
+        .numero {
+          padding: 0 0.6em 0 0;
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+        .imagen {
+          overflow: hidden;
+          padding: 0.5em 1em 0.5em 0;
+          img {
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            display: block;
+          }
+        }
+        .texto {
+          padding: 0.1em 0;
+          .primario {
+            font-weight: 500;
+            color: #212121;
+            display: flex;
+            align-items: center;
+            a {
+              font-weight: 700;
+            }
+            .campo {
+              margin-right: 1em;
+              margin-bottom: 0;
+            }
+          }
+          .secundario {
+            font-size: 0.9em;
+            font-weight: 400;
+            color: #424242;
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 1.6em;
+            overflow: hidden;
+            .campo {
+              margin-right: 1em;
+            }
+          }
+          .label {
+            color: #999;
+            display: inline-block;
+            font-weight: 400;
+          }
+        }
+      }
+      .opciones {
+        display: flex;
+        align-items: center;
+        .opcion {
+          margin-left: 0.3em;
+          white-space: nowrap;
+          a {
+            color: #607D8B;
+            background: $background1;
+            border-radius: 2em;
+            width: 2em;
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .mdi {
+              font-size: 1.4em;
+            }
+            &:hover {
+              background: $background2;
+            }
+          }
+          &.grande a {
+            width: auto;
+            padding: 0 1.2em 0 1em;
+            font-weight: 500;
+            .mdi {
+              margin-right: 0.1em;
+            }
+          }
+        }
+      }
+      &:hover {
+        // background: #F7F7f7;
+        .opcion a {
+          color: #607D8B;
+        }
+      }
+      &.no-leida {
+        box-shadow: 0 0.1em 0.2em -0.1em #000;
+        border-radius: 0.3em;
+        background: #4DB6AC11;
+        outline: 1px solid #B2DFDB;
+      }
+    }
+  }
+}
+
+.lista ul.sorter {
+  li {
+    margin-left: 0.5em;
+    a {
+      color: #9E9E9E;
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: #757575;
+      }
+    }
+    a.asc::before {
+      content: "\f005d";
+    }
+    a.desc::before {
+      content: "\F0045";
+    }
+    a::before {
+      font: normal normal normal 24px/1 "Material Design Icons";
+      line-height: 0.85em;
+      font-size: 1em;
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+ul.pagination {
+  cursor: default;
+  margin: 1em 0 0 0;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  li {
+    text-align: center;
+    display: block;
+    line-height: 3em;
+    min-width: 3em;
+    height: inherit;
+    padding: 0 0.1em;
+    a {
+      font-size: inherit;
+      display: block;
+      width: 100%;
+      padding: 1em 0;
+      color: #424242;
+      border-radius: 2em;
+    }
+    &.active {
+      a {
+        background: $background2;
+      }
+    }
+  }
+  li.disabled {
+    cursor: default;
+    span {
+      color: #AAA;
+    }
+  }
+  li:not(.active) a:hover {
+    background: $background1;
+  }
+}

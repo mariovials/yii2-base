@@ -1,0 +1,266 @@
+@import '../../../common/resources/scss/vars.scss';
+
+/**
+
+  <div class="ficha">
+    <header>
+      <div class="principal">
+        <div class="icono"> <i class="mdi mdi-square"></i> </div>
+        <div class="titulo">
+          <div class="nombre"> </div>
+          <div class="descripcion"> </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="fila">
+        <div class="campo">
+          <div class="label">
+            <?= $model->getAttributeLabel('attribute') ?>
+          </div>
+          <div class="value">
+            <?= $model->attribute ?>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+ */
+
+.ficha {
+  border-radius: $border-radius;
+  margin-bottom: 1em;
+  background: #FFF;
+  > header {
+    padding: 1.2em 1.5em 1.2em 1.5em;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .principal {
+      display: flex;
+      align-items: center;
+      .icono {
+        margin-right: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .mdi {
+          font-size: 2em;
+        }
+        .numero {
+          font-weight: 800;
+          font-size: 1.5rem;
+        }
+      }
+      .titulo {
+        .nombre {
+          font-weight: bolder;
+          font-size: 1.05em;
+          letter-spacing: -0.02em;
+          padding: 0.3em 0;
+          display: flex;
+          align-items: center;
+        }
+        .descripcion {
+          font-size: 0.9em;
+          color: #424242;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-content: center;
+          justify-content: flex-start;
+          align-items: center;
+          font-weight: 500;
+          line-height: 1.6em;
+        }
+      }
+    }
+    .opciones {
+      display: flex;
+      white-space: nowrap;
+      .opcion {
+        margin-left: 0.5em;
+        .btn,
+        .btn-flat {
+          .mdi {
+            font-size: 1.4rem;
+            vertical-align: sub;
+          }
+          &.solo {
+            padding-right: 0.8em;
+            padding-left: 0.8em;
+            .mdi {
+              margin-right: 0;
+            }
+          }
+          &.grande {
+            padding: 0.1em 0.2em;
+            border-radius: 0.5em;
+            .mdi {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  > main {
+    > header {
+      padding: 0.2em 0;
+      .titulo {
+        font-weight: bold;
+        letter-spacing: -0.03em;
+        .mdi {
+          margin-right: 0.2em;
+        }
+      }
+    }
+    padding: 0em 1.5em 1em 1.5em;
+    .fila {
+      &:first-child {
+        margin-top: 0.5em;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 1em;
+      .campo {
+        margin: 0 3em 1em 0;
+        > .label {
+          font-size: 0.8em;
+          font-weight: bold;
+          color: #37474F;
+          margin-bottom: 0.3em;
+        }
+        &.grande {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  > footer {
+    padding: 0.7em 1em;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    flex-wrap: nowrap;
+    .opciones {
+      display: flex;
+      &.center {
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: nowrap;
+        align-items: center;
+        .opcion {
+          margin-bottom: 0.5em;
+        }
+      }
+      .opcion {
+        margin-left: 0.5em;
+      }
+    }
+  }
+  &.ocultable {
+    > header {
+      cursor: pointer;
+      &::before {
+        font: normal normal normal 24px/1 "Material Design Icons";
+        content: "\F0143";
+        color: #bdbdbd;
+        line-height: 1em;
+        float: right;
+        text-shadow: 0em 0em 0.8em #fff;
+      }
+    }
+    &.oculta {
+      > header {
+        &::before {
+          content: "\F0140";
+        }
+      }
+      > main {
+        display: none;
+      }
+      > footer {
+        display: none;
+      }
+    }
+  }
+}
+
+/** campo lineal */
+.ficha.lineal .fila,
+.ficha .fila.lineal {
+  flex-direction: column;
+}
+.ficha.lineal .fila .campo,
+.ficha .fila.lineal .campo,
+.ficha .fila .campo.lineal {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  .label {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.ficha.accion {
+  background: none;
+  > header {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    .principal {
+      .icono {
+        .mdi {
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+}
+
+.ficha.header {
+  > header {
+    // padding-bottom: 1em;
+    .icono .mdi {
+      font-size: 3em;
+      line-height: 1em;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.ficha.lista {
+  > header {
+    font-size: 1em;
+    padding: 1.2em 1.5em 0em 1.5em;
+    margin-bottom: 0;
+  }
+  main {
+    padding: 1em;
+  }
+  .items .item .informacion .campo {
+    margin-bottom: 0;
+  }
+  &.con-filtro {
+    > main {
+      padding: 0;
+      > .lista {
+        padding: 0 1em 1em 1em;
+      }
+      > .filtro {
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../../common/resources/scss/vendor/reset.scss';
+@import '../../../common/resources/scss/html.scss';
+@import '../../../common/resources/scss/helpers.scss';
+
+@import 'layout.scss';
+@import '../../../backend/resources/scss/ficha.scss';
+
+@import '../../../common/resources/scss/elementos.scss';
+@import '../../../common/resources/scss/form.scss';
+
+
+/**
+ * Definicio de estilos
+ */
+
+@import 'mobile.scss';

@@ -1,0 +1,179 @@
+@media only screen and (max-width: 800px) {
+
+#examenes .examen {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  background: #FFF;
+  box-shadow: 0 0 0.6em -0.3em #000;
+  z-index: 999999;
+}
+#logo img {
+  width: 100%;
+  height: auto;
+}
+
+#entrar-wrapper {
+  display: none;
+}
+
+#footer {
+  .informacion {
+    display: flex;
+    padding: 2em 1em;
+    flex-direction: column;
+    .columna {
+      margin: 0;
+      width: 100%;
+      margin: 0 0 3em;
+      .contenido {
+        line-height: 1.6em;
+      }
+    }
+  }
+}
+
+.banner-contenido {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  .texto {
+    padding: 2em;
+    .titulo {
+      font-size: 2rem;
+      text-shadow: 0 0 5em #000, 0 0 0.1em #000C;
+    }
+    .descripcion {
+      font-size: 1.5rem;
+      text-shadow: 0 0 5em #000, 0 0 0.1em #000C;
+    }
+  }
+}
+
+.btn, .btn-flat {
+}
+#menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 5.2rem;
+  left: 0;
+  background: #FFF;
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 0.1em 1em -0.5em #000;
+  z-index: 1;
+  > li {
+    text-align: center;
+    margin: 0.5em 0;
+    > a {
+      &.btn {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+#btn-menu {
+  border: none;
+  background: none;
+  font-size: 3em;
+  display: block;
+  padding: 0em 0.5rem 0em 1.5rem;
+  cursor: pointer;
+}
+
+#btn-carro {
+  border-radius: 0.3em;
+  min-width: 4em;
+}
+#link-telemedicina {
+  background: inherit;
+}
+
+#compra {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  padding: 0;
+}
+#informacion {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  padding: 1rem 1rem 1rem 1rem;
+}
+#monto {
+  width: 100%;
+
+}
+
+/**
+ * Form
+ */
+.form .fieldset {
+  padding: 1em;
+}
+
+.form .fieldset header .informacion .icono,
+.form .fieldset header .informacion .titulo .nombre {
+  font-size: 1.3em;
+}
+
+.form .filas .fila .campos.flex {
+  display: flex;
+  flex-direction: column;
+}
+.form .fieldset header > .estado {
+  display: none;
+}
+.form-group.radiolist > label {
+  display: block;
+  height: auto;
+  word-break: break-word;
+  margin-bottom: 0.5em;
+}
+.form-group.radiolist > [role=radiogroup] > label {
+  white-space: normal;
+  word-break: break-word;
+  margin-bottom: 0.5em;
+}
+.form .fieldset footer {
+  padding-left: 0;
+}
+.form .fieldset footer .botones .boton {
+  margin-right: 0;
+}
+
+#terminos .filas .fila .icono {
+  display: none;
+}
+
+.btn.bajo,
+.btn-flat.bajo {
+  height: auto;
+  line-height: 0.5em;
+  padding: 0.4em 1.5em 0.8em;
+}
+#orden .ficha > main {
+  margin-left: 0;
+}
+#orden > main {
+  padding: 0 0.5em;
+}
+#mensaje > header,
+#orden > header,
+#comprobante-pago > header {
+  padding: 1em 1em;
+}
+
+
+}

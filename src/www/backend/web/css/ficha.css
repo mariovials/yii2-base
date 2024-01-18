@@ -1,0 +1,253 @@
+:root {
+  --color-1: #00897b;
+  --color-1-dark: #00796B;
+  --background-1: #E0F2F1;
+}
+
+/**
+
+  <div class="ficha">
+    <header>
+      <div class="principal">
+        <div class="icono"> <i class="mdi mdi-square"></i> </div>
+        <div class="titulo">
+          <div class="nombre"> </div>
+          <div class="descripcion"> </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="fila">
+        <div class="campo">
+          <div class="label">
+            <?= $model->getAttributeLabel('attribute') ?>
+          </div>
+          <div class="value">
+            <?= $model->attribute ?>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+ */
+.ficha {
+  border-radius: 0.6em;
+  margin-bottom: 1em;
+  background: #FFF;
+}
+.ficha > header {
+  padding: 1.2em 1.5em 1.2em 1.5em;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.ficha > header .principal {
+  display: flex;
+  align-items: center;
+}
+.ficha > header .principal .icono {
+  margin-right: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ficha > header .principal .icono .mdi {
+  font-size: 2em;
+}
+.ficha > header .principal .icono .numero {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.ficha > header .principal .titulo .nombre {
+  font-weight: bolder;
+  font-size: 1.05em;
+  letter-spacing: -0.02em;
+  padding: 0.3em 0;
+  display: flex;
+  align-items: center;
+}
+.ficha > header .principal .titulo .descripcion {
+  font-size: 0.9em;
+  color: #424242;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.6em;
+}
+.ficha > header .opciones {
+  display: flex;
+  white-space: nowrap;
+}
+.ficha > header .opciones .opcion {
+  margin-left: 0.5em;
+}
+.ficha > header .opciones .opcion .btn .mdi,
+.ficha > header .opciones .opcion .btn-flat .mdi {
+  font-size: 1.4rem;
+  vertical-align: sub;
+}
+.ficha > header .opciones .opcion .btn.solo,
+.ficha > header .opciones .opcion .btn-flat.solo {
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+}
+.ficha > header .opciones .opcion .btn.solo .mdi,
+.ficha > header .opciones .opcion .btn-flat.solo .mdi {
+  margin-right: 0;
+}
+.ficha > header .opciones .opcion .btn.grande,
+.ficha > header .opciones .opcion .btn-flat.grande {
+  padding: 0.1em 0.2em;
+  border-radius: 0.5em;
+}
+.ficha > header .opciones .opcion .btn.grande .mdi,
+.ficha > header .opciones .opcion .btn-flat.grande .mdi {
+  font-size: 2rem;
+}
+.ficha > main {
+  padding: 0em 1.5em 1em 1.5em;
+}
+.ficha > main > header {
+  padding: 0.2em 0;
+}
+.ficha > main > header .titulo {
+  font-weight: bold;
+  letter-spacing: -0.03em;
+}
+.ficha > main > header .titulo .mdi {
+  margin-right: 0.2em;
+}
+.ficha > main .fila {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+.ficha > main .fila:first-child {
+  margin-top: 0.5em;
+}
+.ficha > main .fila:last-child {
+  margin-bottom: 0;
+}
+.ficha > main .fila .campo {
+  margin: 0 3em 1em 0;
+}
+.ficha > main .fila .campo > .label {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #37474F;
+  margin-bottom: 0.3em;
+}
+.ficha > main .fila .campo.grande {
+  width: 100%;
+  margin-right: 0;
+}
+.ficha > footer {
+  padding: 0.7em 1em;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.ficha > footer .opciones {
+  display: flex;
+}
+.ficha > footer .opciones.center {
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.ficha > footer .opciones.center .opcion {
+  margin-bottom: 0.5em;
+}
+.ficha > footer .opciones .opcion {
+  margin-left: 0.5em;
+}
+.ficha.ocultable > header {
+  cursor: pointer;
+}
+.ficha.ocultable > header::before {
+  font: normal normal normal 24px/1 "Material Design Icons";
+  content: "\f0143";
+  color: #bdbdbd;
+  line-height: 1em;
+  float: right;
+  text-shadow: 0em 0em 0.8em #fff;
+}
+.ficha.ocultable.oculta > header::before {
+  content: "\f0140";
+}
+.ficha.ocultable.oculta > main {
+  display: none;
+}
+.ficha.ocultable.oculta > footer {
+  display: none;
+}
+
+/** campo lineal */
+.ficha.lineal .fila,
+.ficha .fila.lineal {
+  flex-direction: column;
+}
+
+.ficha.lineal .fila .campo,
+.ficha .fila.lineal .campo,
+.ficha .fila .campo.lineal {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.ficha.lineal .fila .campo .label,
+.ficha .fila.lineal .campo .label,
+.ficha .fila .campo.lineal .label {
+  font-size: 1rem;
+  font-weight: 600;
+  width: 50%;
+  margin-bottom: 0;
+}
+
+.ficha.accion {
+  background: none;
+}
+.ficha.accion > header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.ficha.accion > header .principal .icono .mdi {
+  font-size: 1.4em;
+}
+
+.ficha.header > header .icono .mdi {
+  font-size: 3em;
+  line-height: 1em;
+  margin-right: 0.5rem;
+}
+
+.ficha.lista > header {
+  font-size: 1em;
+  padding: 1.2em 1.5em 0em 1.5em;
+  margin-bottom: 0;
+}
+.ficha.lista main {
+  padding: 1em;
+}
+.ficha.lista .items .item .informacion .campo {
+  margin-bottom: 0;
+}
+.ficha.lista.con-filtro > main {
+  padding: 0;
+}
+.ficha.lista.con-filtro > main > .lista {
+  padding: 0 1em 1em 1em;
+}
+
+/*# sourceMappingURL=ficha.css.map */

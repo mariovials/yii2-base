@@ -1,0 +1,197 @@
+:root {
+  --color-1: #00897b;
+  --color-1-dark: #00796B;
+  --background-1: #E0F2F1;
+}
+
+div.lista.compacta .items .item {
+  height: 2.6em;
+}
+div.lista > header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin-bottom: 1em;
+  letter-spacing: -0.02em;
+  padding: 0 1rem;
+}
+div.lista > header .cantidad {
+  color: #9E9E9E;
+}
+div.lista > header .sorter {
+  display: flex;
+}
+div.lista .items .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4em 1em;
+}
+div.lista .items .item .informacion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+div.lista .items .item .informacion .icono {
+  padding: 0 0.6em 0 0;
+  font-size: 1.5em;
+  color: #00796B;
+}
+div.lista .items .item .informacion .numero {
+  padding: 0 0.6em 0 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+div.lista .items .item .informacion .imagen {
+  overflow: hidden;
+  padding: 0.5em 1em 0.5em 0;
+}
+div.lista .items .item .informacion .imagen img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: block;
+}
+div.lista .items .item .informacion .texto {
+  padding: 0.1em 0;
+}
+div.lista .items .item .informacion .texto .primario {
+  font-weight: 500;
+  color: #212121;
+  display: flex;
+  align-items: center;
+}
+div.lista .items .item .informacion .texto .primario a {
+  font-weight: 700;
+}
+div.lista .items .item .informacion .texto .primario .campo {
+  margin-right: 1em;
+  margin-bottom: 0;
+}
+div.lista .items .item .informacion .texto .secundario {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #424242;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 1.6em;
+  overflow: hidden;
+}
+div.lista .items .item .informacion .texto .secundario .campo {
+  margin-right: 1em;
+}
+div.lista .items .item .informacion .texto .label {
+  color: #999;
+  display: inline-block;
+  font-weight: 400;
+}
+div.lista .items .item .opciones {
+  display: flex;
+  align-items: center;
+}
+div.lista .items .item .opciones .opcion {
+  margin-left: 0.3em;
+  white-space: nowrap;
+}
+div.lista .items .item .opciones .opcion a {
+  color: #607D8B;
+  background: #E0F2F1;
+  border-radius: 2em;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.lista .items .item .opciones .opcion a .mdi {
+  font-size: 1.4em;
+}
+div.lista .items .item .opciones .opcion a:hover {
+  background: #B2DFDB;
+}
+div.lista .items .item .opciones .opcion.grande a {
+  width: auto;
+  padding: 0 1.2em 0 1em;
+  font-weight: 500;
+}
+div.lista .items .item .opciones .opcion.grande a .mdi {
+  margin-right: 0.1em;
+}
+div.lista .items .item:hover .opcion a {
+  color: #607D8B;
+}
+div.lista .items .item.no-leida {
+  box-shadow: 0 0.1em 0.2em -0.1em #000;
+  border-radius: 0.3em;
+  background: rgba(77, 182, 172, 0.0666666667);
+  outline: 1px solid #B2DFDB;
+}
+
+.lista ul.sorter li {
+  margin-left: 0.5em;
+}
+.lista ul.sorter li a {
+  color: #9E9E9E;
+  display: flex;
+  align-items: center;
+}
+.lista ul.sorter li a:hover {
+  color: #757575;
+}
+.lista ul.sorter li a.asc::before {
+  content: "\f005d";
+}
+.lista ul.sorter li a.desc::before {
+  content: "\f0045";
+}
+.lista ul.sorter li a::before {
+  font: normal normal normal 24px/1 "Material Design Icons";
+  line-height: 0.85em;
+  font-size: 1em;
+  vertical-align: text-bottom;
+}
+
+ul.pagination {
+  cursor: default;
+  margin: 1em 0 0 0;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+ul.pagination li {
+  text-align: center;
+  display: block;
+  line-height: 3em;
+  min-width: 3em;
+  height: inherit;
+  padding: 0 0.1em;
+}
+ul.pagination li a {
+  font-size: inherit;
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  color: #424242;
+  border-radius: 2em;
+}
+ul.pagination li.active a {
+  background: #B2DFDB;
+}
+ul.pagination li.disabled {
+  cursor: default;
+}
+ul.pagination li.disabled span {
+  color: #AAA;
+}
+ul.pagination li:not(.active) a:hover {
+  background: #E0F2F1;
+}
+
+/*# sourceMappingURL=lista.css.map */

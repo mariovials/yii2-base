@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import '../../../common/resources/scss/vars.scss';
+
+* {
+  font-family: 'Noto Sans', 'Tahoma', sans-serif;
+}
+
+body {
+}
+
+#pagina {
+  background: #ECEFF1;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  background: $background;
+  box-shadow: 0 0.4em 0.5em -0.8em #000;
+  > div {
+    display: flex;
+  }
+}
+#logo img {
+  height: 4rem;
+}
+#principal {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 1em 0;
+  min-height: calc(100vh - 4rem);
+}
+
+#cuerpo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 0 0 1em;
+  width: calc(100% - 15.2em);
+}
+
+#contenido {
+  width: 100%;
+  margin-right: 1em;
+}
+
+#main {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#lateral {
+  .divider {
+    border: 1px solid #EEEEEE;
+    height: 0.01px;
+    border-radius: 1em;
+    margin: 1.2em;
+    border-bottom-color: #F3F3F3;
+  }
+  background: $background;
+  width: 16rem;
+  min-width: 16rem;
+  max-width: 16rem;
+  border-radius: $border-radius;
+  padding: 1.5em 1em 1em 1em;
+  font-size: 0.9em;
+  min-height: calc(100vh - 6.5em);
+  .btn, .btn-flat {
+    // padding: 0.7em 1.5em 0.7em 1.2em;
+    // margin-bottom: 0.5em;
+    box-shadow: 0 0.1em 0.2em -0.1em #000;
+  }
+  .btn {
+    &:hover {
+      box-shadow: 0 0.1em 0.2em -0.1em #000, 0 0.2em 0.5em -0.3em #000;
+      &:active {
+        box-shadow: 0 0.05em 0.2em -0.1em #000;
+      }
+    }
+  }
+  .principal {
+    margin-bottom: 1em;
+    .btn, btn-flat {
+      font-size: 1rem;
+      margin-bottom: 0.3em;
+    }
+  }
+  .secundario {
+    font-size: 0.95em;
+    > .titulo {
+      font-size: 1.2em;
+      font-weight: 700;
+      margin: 0.5em 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      color: #424242;
+      .mdi {
+        font-size: 1.1em;
+        margin-right: 0.3em;
+        color: #616161;
+      }
+    }
+  }
+  .link {
+    padding: 0.6em 1em;
+    display: block;
+    font-weight: 500;
+    border-radius: 0.3em;
+    margin-bottom: 0.2em;
+    color: #456453;
+    position: relative;
+    .numero {
+      position: absolute;
+      right: 0.8em;
+      padding: 0.1em 0.5em;
+      border-radius: 2em;
+      font-weight: 700;
+      font-size: 0.9em;
+      color: #757575;
+      background: #00000011;
+    }
+    .mdi {
+      font-size: 1.4em;
+      line-height: 1em;
+      vertical-align: text-top;
+      margin-right: 0.1em;
+    }
+    &:hover {
+      background: #EEE;
+    }
+    &.activo {
+      background: #E7E7E7;
+    }
+  }
+}
+#opciones {
+  display: flex;
+  background: #CFD8DC;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  border-radius: 0.6em;
+  .opcion {
+    a {
+      margin-bottom: 0;
+      margin-right: 0.5em;
+      height: 3em;
+    }
+    .mdi {
+      font-size: 1.4rem;
+      margin-right: 0.1em;
+    }
+  }
+}
+#menu {
+  min-width: 14rem;
+  border-radius: 0 $border-radius $border-radius 0;
+  padding: 1em 0.5em;
+  background: $background;
+  height: calc(100vh - 6em);
+  ul {
+    li {
+      margin-bottom: 0.2rem;
+      &.divider {
+        border-top: 1px solid #0003;
+        margin: 0.5em 1em;
+      }
+      a {
+        font-weight: 500;
+        color: #555;
+        padding: 0.3em 1em;
+        display: flex;
+        align-items: center;
+        border-radius: 2em;
+        letter-spacing: -0.01em;
+        position: relative;
+        // background: #ECEFF1;
+        .numero {
+          position: absolute;
+          right: 0.8em;
+          padding: 0.1em 0.5em;
+          border-radius: 2em;
+          font-weight: 700;
+          font-size: 0.9em;
+          color: #757575;
+        }
+        .chevron {
+          position: absolute;
+          right: 2.5em;
+          padding: 0.1em 0.5em;
+          border-radius: 2em;
+          font-weight: 700;
+          font-size: 0.9em;
+          color: #757575;
+          &:hover {
+            background: #00000011;
+          }
+          .mdi {
+            margin-right: 0;
+          }
+        }
+        .mdi {
+          margin-right: 0.3em;
+          font-size: 1.6em;
+        }
+        &.activo {
+          background: #607D8B33;
+          color: #424242;
+          .numero {
+            background: #00000022;
+            color: #455A64;
+          }
+        }
+        &:hover {
+          background: #607D8B22;
+        }
+      }
+      ul {
+        margin: -2em 0em 1em 1em;
+        border-left: 2px solid #CFD8DC;
+        padding: 2.2em 0.5em 0em 0.2em;
+        transition: all 400ms;
+        overflow: hidden;
+        &.cerrado {
+          height: 0px !important;
+          border-color: #ECEFF1;
+          margin-bottom: 0;
+          transition: all 400ms;
+        }
+        li {
+          a {
+            padding: 0.4em 2.2em 0.4em 1em;
+            font-size: 0.9em;
+            border-radius: 2em;
+            line-height: 1em;
+            i.mdi {
+              font-size: 1.3em;
+            }
+            &.activo {
+              background: #CFD8DC;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+#botones-usuario {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  > li {
+    position: relative;
+    margin: 0.3em;
+    .desplegable {
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+    &.activo {
+      #boton-usuario {
+        // background: #00000033;
+        outline: 2px solid #CCC;
+      }
+      ul {
+        display: block;
+      }
+    }
+  }
+}
+#menu-usuario {
+  #boton-usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.2em 1em 0.2em 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    user-select: none;
+    color: #555555;
+    font-weight: 500;
+    &:hover {
+      background: #00000011;
+    }
+    img {
+      border-radius: 50%;
+      height: 3em;
+      margin-left: 1em;
+      display: block;
+    }
+  }
+  ul {
+    display: none;
+    background: $background;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    box-shadow: 0 1px 4px 0px #0007;
+    padding: 0.5em 0;
+    margin-right: 0.5em;
+    li {
+      a {
+        display: flex;
+        padding: 1em;
+        .mdi {
+          margin-right: 0.5em;
+        }
+        &:hover {
+          background: #EEE;
+        }
+      }
+    }
+  }
+
+}

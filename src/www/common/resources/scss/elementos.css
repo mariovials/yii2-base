@@ -1,0 +1,267 @@
+.btn, .btn-flat {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border: none;
+  border-radius: 2em;
+  font-size: 0.9rem;
+  color: #546E7A;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  line-height: 1.9rem;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+}
+.btn .mdi, .btn-flat .mdi {
+  font-size: 1.2rem;
+  margin-right: 0.3em;
+  line-height: normal;
+}
+.btn.bajo, .btn-flat.bajo {
+  height: 2em;
+  line-height: 2em;
+  padding: 0.1em 1.5em 0em 1.5em;
+}
+.btn.bajo .mdi, .btn-flat.bajo .mdi {
+  vertical-align: middle;
+}
+.btn.solo, .btn-flat.solo {
+  padding-right: 1.3em;
+  padding-left: 1.3em;
+}
+.btn.solo > .mdi, .btn-flat.solo > .mdi {
+  margin: 0;
+}
+.btn[disabled], .btn-flat[disabled] {
+  pointer-events: none;
+  box-shadow: none !important;
+  background: #EEEEEE !important;
+  color: #BBBBBB !important;
+}
+.btn.icon-right, .btn-flat.icon-right {
+  padding: 0.5em 1.5em 0.5em 2em;
+}
+.btn.icon-right .mdi, .btn-flat.icon-right .mdi {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.btn {
+  background: #E0F2F1;
+}
+.btn:hover {
+  background: #B2DFDB;
+}
+
+.btn-flat {
+  background: none;
+}
+.btn-flat:hover {
+  background: #ECEFF1;
+}
+.btn-flat[disabled] {
+  color: #EEEEEE;
+}
+
+.nota {
+  background: #E1F5FE;
+  padding: 1em 1.5em;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.nota .titulo {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.nota .descripcion b {
+  font-weight: 600;
+}
+
+.chip {
+  background: rgba(96, 125, 139, 0.1254901961);
+  border-radius: 1em;
+  display: inline-block;
+  margin-right: 0.3em;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: #455A64;
+  margin: 0.05em 0.5em 0.05em 0;
+  padding: 0.1em 1em 0.1em 1em;
+  line-height: inherit;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.chip .mdi {
+  margin-right: 0.3em;
+  margin-left: -0.3em;
+}
+.chip a {
+  color: inherit;
+}
+.chip.icon-right .mdi {
+  margin-left: 0.3em;
+  margin-right: -0.3em;
+}
+.chip.flat {
+  background: none;
+  padding: 0.1em 0.2em;
+}
+.chip.flat.hover {
+  padding: 0.1em 0.7em;
+}
+.chip.flat.hover:hover {
+  background: #EEE;
+}
+
+.desplegable {
+  position: relative;
+  cursor: default;
+}
+.desplegable > div {
+  position: relative;
+  padding: 0em 0.2em;
+  border-radius: 0.1em;
+  border: 1px solid #767676;
+  user-select: none;
+  line-height: 1.313em;
+}
+.desplegable > div:after {
+  content: "";
+  position: absolute;
+  right: 0.3em;
+  border: solid 0.15em #000;
+  border-right: none;
+  border-top: none;
+  width: 0.3em;
+  height: 0.3em;
+  transform: translateY(0.3em) rotate(-45deg);
+}
+.desplegable > ul {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0.1em 0.4em -0.2em #000;
+  background: #FFFFFF;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid #CCC;
+  overflow: hidden;
+  border-radius: 0.4em;
+}
+.desplegable > ul > li {
+  padding: 0em 0.2em;
+  line-height: 1.313em;
+}
+.desplegable > ul > li:hover {
+  background: rgb(var(--default-background, 33, 150, 243));
+  color: #FFFFFF;
+}
+.desplegable.activo > ul {
+  display: block;
+  z-index: 2;
+}
+
+ul.historia {
+  margin: 0 0.5em;
+}
+ul.historia > li {
+  border-left: 0.15em solid #DDD;
+  padding: 0em 0.3em 1.5em 1em;
+  position: relative;
+  color: #444;
+}
+ul.historia > li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  background: #FFF;
+  border: 0.15em solid #AAA;
+  border-radius: 50%;
+  padding: 0.1em;
+  top: 0.3em;
+  left: -0.45em;
+  margin: 0em;
+  outline: 0.2em solid #FFF;
+}
+ul.historia > li .titulo {
+  font-weight: 500;
+}
+ul.historia > li .fecha {
+  color: #555;
+  font-size: 0.8em;
+  margin-bottom: 0.4em;
+  padding-left: 0.3em;
+}
+ul.historia > li.inicio::before, ul.historia > li.termino::before {
+  width: 0.1em;
+  height: 0.1em;
+  background: #AAA;
+  left: -0.3em;
+}
+ul.historia > li.inicio {
+  border-color: transparent;
+}
+ul.historia > li.inicio::before {
+  top: 0.3em;
+}
+ul.historia > li.termino::before {
+  outline-width: 0.4em;
+}
+ul.historia > li.parcial::before {
+  border-style: dotted;
+}
+ul.historia ul.subhistoria {
+  margin-top: 0.5em;
+  margin-left: 1.2rem;
+}
+ul.historia ul.subhistoria > li {
+  position: relative;
+  margin-bottom: 0.4em;
+}
+ul.historia ul.subhistoria > li::after {
+  content: "";
+  width: 1.2em;
+  height: 1px;
+  background: #CCC;
+  position: absolute;
+  top: 0.6em;
+  left: -1.8em;
+}
+ul.historia ul.subhistoria > li::before {
+  content: "";
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: -2.55em;
+  background: #F5F5F5;
+  border: 0.15em solid #BBB;
+  border-radius: 50%;
+  padding: 0.1em;
+  top: 0.4em;
+  margin: 0em;
+  outline: 0.2em solid #FFF;
+}
+ul.historia ul.subhistoria > li .fecha {
+  margin-bottom: 0;
+  padding-left: 0.05em;
+}
+ul.historia ul.subhistoria > li .titulo {
+  font-weight: 400;
+  font-size: 0.9em;
+  color: #000;
+}
+
+.molecvet .molec {
+  font-weight: 500;
+}
+.molecvet .vet {
+  font-weight: 600;
+  color: #00695C;
+}
+
+/*# sourceMappingURL=elementos.css.map */
