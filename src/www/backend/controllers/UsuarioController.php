@@ -28,9 +28,9 @@ class UsuarioController extends Controller
     ];
   }
 
-  public function actionIndice()
+  public function actionLista()
   {
-    return $this->render('index');
+    return $this->render('lista');
   }
 
   public function actionAgregar()

@@ -12,6 +12,7 @@
   cursor: pointer;
   line-height: 1.9rem;
   padding: 0.5em 1.5em 0.5em 1.5em;
+  width: fit-content;
   .mdi {
     font-size: 1.2rem;
     margin-right: 0.3em;
@@ -54,6 +55,7 @@
 }
 .btn-flat {
   background: none;
+  box-shadow: none;
   &:hover {
     background: #ECEFF1;
   }
@@ -168,113 +170,5 @@
       display: block;
       z-index: 2;
     }
-  }
-}
-
-ul.historia {
-  margin: 0 0.5em;
-  > li {
-    border-left: 0.15em solid #DDD;
-    padding: 0em 0.3em 1.5em 1em;
-    position: relative;
-    color: #444;
-    &::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      position: absolute;
-      background: #FFF;
-      border: 0.15em solid #AAA;
-      border-radius: 50%;
-      padding: 0.1em;
-      top: 0.3em;
-      left: -0.45em;
-      margin: 0em;
-      outline: 0.2em solid #FFF;
-    }
-    .titulo {
-      font-weight: 500;
-    }
-    .fecha {
-      color: #555;
-      font-size: 0.8em;
-      margin-bottom: 0.4em;
-      padding-left: 0.3em;
-    }
-    &.inicio,
-    &.termino {
-      &::before {
-        width: 0.1em;
-        height: 0.1em;
-        background: #AAA;
-        left: -0.3em;
-      }
-    }
-    &.inicio {
-      border-color: transparent;
-      &::before {
-        top: 0.3em;
-      }
-    }
-    &.termino {
-      &::before {
-        outline-width: 0.4em;
-      }
-    }
-    &.parcial {
-      &::before {
-        border-style: dotted;
-      }
-    }
-  }
-  ul.subhistoria {
-    margin-top: 0.5em;
-    margin-left: 1.2rem;
-    > li {
-      position: relative;
-      margin-bottom: 0.4em;
-      &::after {
-        content: "";
-        width: 1.2em;
-        height: 1px;
-        background: #CCC;
-        position: absolute;
-        top: 0.6em;
-        left: -1.8em;
-      }
-      &::before {
-        content: "";
-        width: 1px;
-        height: 1px;
-        position: absolute;
-        left: -2.55em;
-        background: #F5F5F5;
-        border: 0.15em solid #BBB;
-        border-radius: 50%;
-        padding: 0.1em;
-        top: 0.4em;
-        margin: 0em;
-        outline: 0.2em solid #FFF;
-      }
-      .fecha {
-        margin-bottom: 0;
-        padding-left: 0.05em;
-      }
-      .titulo {
-        font-weight: 400;
-        font-size: 0.9em;
-        color: #000;
-      }
-    }
-  }
-}
-
-.molecvet {
-  .molec {
-    font-weight: 500;
-  }
-  .vet {
-    font-weight: 600;
-    color: #00695C;
   }
 }

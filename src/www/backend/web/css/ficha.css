@@ -81,6 +81,9 @@
   font-weight: 500;
   line-height: 1.6em;
 }
+.ficha > header .principal .titulo .descripcion .campo {
+  margin-right: 1em;
+}
 .ficha > header .opciones {
   display: flex;
   white-space: nowrap;

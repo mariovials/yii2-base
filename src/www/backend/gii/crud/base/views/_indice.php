@@ -22,10 +22,10 @@ $opciones = $opciones ?? [];
 
   <header>
     <div class="principal">
-      <div class="icono"> <span class="mdi mdi-help-box-multiple"></span> </div>
+      <div class="icono"> <span class="mdi mdi-help-box"></span> </div>
       <div class="titulo">
         <div class="nombre">
-          <a href="<?= '<?=' ?> Url::to(['/<?= $cssClass ?>/indice']) ?>">
+          <a href="<?= '<?=' ?> Url::to(['/<?= $cssClass ?>']) ?>">
             <?= $textClass ?>s
           </a>
         </div>

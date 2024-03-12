@@ -5,36 +5,15 @@ namespace common\models;
 use Yii;
 use common\behaviors\FechaBehavior;
 
-/**
- * This is the model class for table "archivo".
- *
- * @property int $id
- * @property int|null $tipo
- * @property string|null $nombre
- * @property string|null $mime_type
- * @property string|null $extension
- * @property int|null $size
- * @property string|null $basename
- * @property string|null $filename
- * @property string|null $ruta
- * @property string|null $ruta_web
- * @property string|null $ruta_min
- */
 class Archivo extends \yii\db\ActiveRecord
 {
   public $archivo = null;
 
-  /**
-   * {@inheritdoc}
-   */
   public static function tableName()
   {
     return 'archivo';
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function behaviors()
   {
     return [
@@ -42,9 +21,6 @@ class Archivo extends \yii\db\ActiveRecord
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function rules()
   {
     return [
@@ -56,9 +32,6 @@ class Archivo extends \yii\db\ActiveRecord
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function attributeLabels()
   {
     return [
@@ -98,9 +71,6 @@ class Archivo extends \yii\db\ActiveRecord
     ][$this->extension] ?? 'file';
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function beforeSave($insert)
   {
     if ($this->archivo) {
@@ -114,15 +84,12 @@ class Archivo extends \yii\db\ActiveRecord
     return parent::beforeSave($insert);
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function afterSave($insert, $changedAttributes)
   {
     if ($this->archivo) {
       $nombre = "{$this->id}_{$this->filename}";
       $ruta = '/archivos/' . $nombre;
-      if ($this->archivo->saveAs(Yii::getAlias('@backend/web') . $ruta)) {
+      if ($this->archivo->saveAs(Yii::getAlias('@frontend/web') . $ruta)) {
         $this->updateAttributes(['ruta' => $ruta]);
         if ($this->esImagen()) {
           // hacer web
@@ -141,7 +108,12 @@ class Archivo extends \yii\db\ActiveRecord
 
   public function getRutaCompleta()
   {
-    return Yii::getAlias('@backend/web') . $this->ruta;
+    return Yii::getAlias('@frontend/web') . $this->ruta;
+  }
+
+  public function getRutaWeb()
+  {
+    return Yii::$app->urlManagerFrontend->createAbsoluteUrl($this->ruta);
   }
 
   public function esImagen()
@@ -151,9 +123,9 @@ class Archivo extends \yii\db\ActiveRecord
 
   public function beforeDelete()
   {
-    @unlink(Yii::getAlias('@backend/web') . $this->ruta);
-    @unlink(Yii::getAlias('@backend/web') . $this->ruta_web);
-    @unlink(Yii::getAlias('@backend/web') . $this->ruta_min);
+    @unlink(Yii::getAlias('@frontend/web') . $this->ruta);
+    @unlink(Yii::getAlias('@frontend/web') . $this->ruta_web);
+    @unlink(Yii::getAlias('@frontend/web') . $this->ruta_min);
     return parent::beforeDelete();
   }
 }

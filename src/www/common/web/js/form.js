@@ -14,6 +14,7 @@ window.addEventListener("pageshow", () => {
   };
 
   revisarInput = function(input) {
+    console.log('revisando')
     input.closest('.form-group')
       .find('label')
       .toggleClass('activo', input.val() != '')

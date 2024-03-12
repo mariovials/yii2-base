@@ -1,51 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html body {
+  background: #eceff177;
+}
+
 * {
   font-family: 'Montserrat', 'Arial', sans-serif;
 }
 
-.banner-contenido {
-  background-size: cover;
-  min-height: 30vh;
-  background-position: 50% 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  .texto {
-    padding: 1em 3em;
-    color: #ffffff;
-    margin: auto 0;
-    .titulo {
-      font-size: 3em;
-      font-weight: bold;
-      line-height: 1.2em;
-      text-shadow: 0 0 1.5em #9E9E9E, 0 0 0.1em #AAA;
-    }
-    .descripcion {
-      margin-top: 0.5em;
-      font-size: 1.8em;
-      line-height: 1.4em;
-      text-shadow: 0 0 2em #9E9E9E, 0 0 0.1em #777;
-    }
-  }
-}
 .wrapper {
   width: 100%;
-}
-.wrapper,
-#header,
-#footer {
   max-width: 80rem;
   margin: 0 auto;
 }
 
-#btn-menu {
-  display: none;
-}
 #header {
   padding: 0.5em 2em 0.5em 1em;
+  background: #f6f7f8EE;
+  position: sticky;
+  top: 0;
 }
 nav {
   position: relative;
@@ -61,8 +34,8 @@ nav {
     max-height: 5em;
   }
 }
-#menu-wrapper {
-  display: flex;
+#main {
+  min-height: calc(100vh - 9.4rem);
 }
 #menu {
   padding: 0 1rem;
@@ -96,53 +69,23 @@ nav {
     }
   }
 }
-
-#btn-carro {
-  color: #455A64;
-  position: relative;
-  background: transparent;
-  height: 4em;
-  border-radius: 0.5em;
-  padding: 1.2em 1em;
-  font-size: 1.1rem;
-  &:hover {
-    background: #CFD8DC;
-  }
-  > .mdi {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  .contador {
-    border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-    background: #FF8F00;
-    font-weight: bold;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: -0.5em;
-    right: -1rem;
-    color: #FFF8E1;
-    border: 0.2rem solid #FFF;
-    font-size: 0.9rem;
-    line-height: 1em;
-  }
-  &.activo {
-    background: #FFCC80;
-  }
+#menu-wrapper {
+  display: flex;
 }
 
-.wrapper-footer {
-  background: #263238;
-  min-height: 15rem;
-  padding: 2em 1em;
-  color: #ffffff;
+
+#footer-content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 #footer {
+  position: sticky;
+  bottom: 0;
+  background: #EEE;
+  height: 3em;
   a {
-    color: #FFF;
     font-weight: 600;
   }
   .firma {
@@ -179,102 +122,14 @@ nav {
   }
 }
 
-html body {
-  overflow-y: scroll;
+.wrapper-footer {
+  background: #263238;
+  min-height: 15rem;
+  padding: 2em 1em;
+  color: #ffffff;
 }
 
-#wsp {
-  width: 5em;
-  height: 5em;
-  overflow: hidden;
-  position: fixed;
-  right: 1.5em;
-  bottom: 1.5em;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: #80CBC4;
-  color: #80CBC4;
-  border-radius: 3em;
-  font-weight: 700;
-  transition: all 200ms;
-  white-space: nowrap;
-  padding: 0px 1.7em;
-  box-shadow: 0 0 1em -0.5em #000;
-  .icon {
-    margin-left: 0.5em;
-    height: 1.6em;
-    background: #B2DFDB;
-    border-radius: 1em;
-  }
-  &:hover {
-    box-shadow: 0 0 1em -0.5em #000, 0 0 1.4em -0.8em #000;
-    color: #004d40;
-    width: 19em;
-  }
-}
 
-  #examenes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1em;
-    padding: 1em;
-  }
-  #examenes .examen {
-    min-width: 18em;
-    max-width: 24em;
-    width: calc((100% / 3) - 2em);
-    background: #FFF;
-    border-radius: 1em;
-    margin: 1em;
-    padding: 1em 2em;
-    box-shadow: 0 0 1em -0.3em #00000077;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  #examenes .examen .titulo {
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 0.3em 0;
-  }
-  #examenes .examen .descripcion {
-    font-size: 1em;
-    line-height: 1.4em;
-  }
-  #examenes .examen .precio {
-    font-size: 1.8em;
-    color: #37474F;
-    font-weight: 900;
-    padding: 0.5em 0;
-  }
-  #examenes .examen .botones {
-    padding: 0.5em;
-    display: flex;
-    justify-content: center;
-  }
-  #examenes .examen .botones a {
-    border-radius: 1em;
-    font-weight: bold;
-    padding: 0.5em 1.5em;
-    border: 2px solid #00695C;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 0.8rem;
-    margin: 0 0.5rem;
-  }
-  #examenes .examen .botones a .mdi {
-    font-size: 1.6em;
-  }
-  #examenes .examen .botones a.btn-comprar {
-    color: #FFFFFF;
-    background: #00695C;
-  }
-  #examenes .examen .botones a.btn-comprar .mdi {
-    margin-left: 0.5em;
-  }
-  #examenes .examen .botones a.btn-agregar-al-carro {
-    color: #00695C;
-  }
+#btn-menu {
+  display: none;
+}

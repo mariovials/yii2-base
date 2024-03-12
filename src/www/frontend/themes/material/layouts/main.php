@@ -1,15 +1,10 @@
 <?php
 
-/** @var \yii\web\View $this */
-/** @var string $content */
-
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use common\models\Configuracion;
 
 AppAsset::register($this);
-$this->title = $this->title ? "$this->title | App 🐾" : 'App 🐾';
+$this->title = $this->title ? "$this->title | Arpu" : 'Arpu';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -29,7 +24,7 @@ $this->title = $this->title ? "$this->title | App 🐾" : 'App 🐾';
   <div id="pagina">
 
     <header id="header">
-      <nav>
+      <nav class="wrapper">
 
         <a id="logo" href="/">
           <img src="/img/logo.png" alt="">
@@ -37,17 +32,16 @@ $this->title = $this->title ? "$this->title | App 🐾" : 'App 🐾';
 
         <div id="menu-wrapper">
 
-        <ul id="menu">
-          <li>
-            <a href="/sobre">Sobre</a>
-          </li>
-          <li>
-            <a href="/contacto">Contacto</a>
-          </li>
-        </ul>
-        <button id="btn-menu">
-          <i class="mdi mdi-menu"></i>
-        </button>
+          <div id="buscador">
+            <i class="mdi mdi-magnify"></i>
+            <div id="input-buscador">
+            </div>
+          </div>
+
+          <button id="btn-menu">
+            <i class="mdi mdi-menu"></i>
+          </button>
+
         </div>
       </nav>
     </header>
@@ -56,34 +50,22 @@ $this->title = $this->title ? "$this->title | App 🐾" : 'App 🐾';
       <?= $content ?>
     </main>
 
-    <div class="wrapper-footer">
-
-      <footer id="footer" class="wrapper">
-
-        <div class="informacion">
-
+    <footer id="footer">
+      <div id="footer-content" class="wrapper">
+        <div class="">
         </div>
 
-        <div class="firma">
-          © 2023 App. Todos los derechos reservados.
+        <div class="">
+          Arpu.cl ©
         </div>
 
-      </footer>
-
-    </div>
-
-    <div id="entrar-wrapper" class="wrapper">
-      <a href="<?= Yii::$app->urlManagerBackend->createAbsoluteUrl('/') ?>"
-        class="btn-flat">
-        <?php if (Yii::$app->user->isGuest): ?>
-          Ingresar
-          <span class="mdi mdi-account-outline"></span>
-        <?php else: ?>
-          Entrar
-          <span class="mdi mdi-cog"></span>
-        <?php endif; ?>
-      </a>
-    </div>
+        <div class="">
+          <?= Html::a('Ingresar',
+            Yii::$app->urlManagerBackend->createAbsoluteUrl('/'),
+            ['class' => 'btn']) ?>
+        </div>
+      </div>
+    </footer>
 
   </div>
 

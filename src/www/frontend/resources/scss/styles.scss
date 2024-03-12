@@ -10,7 +10,13 @@
 
 
 /**
- * Definicio de estilos
+ * Definicion de estilos
  */
 
 @import 'mobile.scss';
+
+#buscador {
+  .mdi {
+    font-size: 2em;
+  }
+}

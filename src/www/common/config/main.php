@@ -9,6 +9,7 @@ return [
   ],
   'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
   'components' => yii\helpers\ArrayHelper::merge([
+    /**
     'mailer' => [
       'class' => \yii\symfonymailer\Mailer::class,
         'viewPath' => '@common/mail',
@@ -22,6 +23,7 @@ return [
           // 'dsn' => 'native://default',
       ],
     ],
+     */
     'i18n' => [
       'translations' => [
         'app' => [

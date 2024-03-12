@@ -12,7 +12,7 @@ return [
   'controllerNamespace' => 'backend\controllers',
   'bootstrap' => ['log'],
   'modules' => [],
-  'defaultRoute' => 'sistema/indice',
+  'defaultRoute' => 'sistema/lista',
   'components' => [
     'view' => [
       'theme' => [
@@ -36,12 +36,6 @@ return [
       'loginUrl' => ['sistema/ingresar'],
       'enableAutoLogin' => true,
       'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
-    ],
-    'session' => [
-      'class' => yii\web\DbSession::class,
-      'name' => 'advanced',
-      'useStrictMode' => true,
-      'timeout' => 10,
     ],
     'log' => [
       'traceLevel' => YII_DEBUG ? 3 : 0,

@@ -1,20 +1,9 @@
-[*] Cambiar cliente
-[ ] Seleccionar paciente
-[ ] Agregar paciente
-[ ] Seleccionar direccion
-[ ] Agregar direccion
-[*] Manejar comuna
-[ ] Filtrar por fecha
-[ ] Grupo -> Sección
-[ ] Separar pacientes (estado)
-
-[ ] Listado formato medico
-
-[ ] Enviar correo mediante la plataforma
-
 FRONTEND
-[*] filtrar la direccion de muestra (comuna)
-[*] Vista mobile
-[ ] Subtitulo de pagina
+[ ] eliminar sobre del la pagina de inicio, este se pondra en el footer con logos
+[ ] eliminar cuadrado gris de las publicaciones
+[ ] fondo pagina sera el gris claro
+[ ] no aparecerán los campos no llenados, ejemplo, si no hay editores no aparece
+[ ] se incorporara a la vista de la publicación, contacto y si esta disponible
 
-[ ] Mostrar en las compras de orden la información del producto y no sobre el examen
+BACKEND
+[ ] la pagina creara una vista optimizada a las imagenes para evitar fotos muy pesadas

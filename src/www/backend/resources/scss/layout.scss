@@ -26,11 +26,7 @@ body {
 }
 #principal {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: stretch;
   padding: 1em 0;
-  min-height: calc(100vh - 4rem);
 }
 
 #cuerpo {
@@ -38,16 +34,34 @@ body {
   flex-direction: column;
   width: 100%;
   margin: 0 0 0 1em;
-  width: calc(100% - 15.2em);
 }
 
 #contenido {
   width: 100%;
   margin-right: 1em;
+  height: calc(100vh - 6em);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #F5F5F5;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #CCC;
+    border-radius: 0.3em;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #BBB;
+  }
+  .ficha.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
 }
 
 #main {
-  min-height: calc(100vh - 4rem);
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -55,6 +69,14 @@ body {
 }
 
 #lateral {
+  background: $background;
+  width: 16rem;
+  min-width: 16rem;
+  max-width: 16rem;
+  border-radius: $border-radius 0 0 $border-radius;
+  padding: 1.5em 1em 1em 1em;
+  font-size: 0.9em;
+  height: calc(100vh - 6rem);
   .divider {
     border: 1px solid #EEEEEE;
     height: 0.01px;
@@ -62,20 +84,13 @@ body {
     margin: 1.2em;
     border-bottom-color: #F3F3F3;
   }
-  background: $background;
-  width: 16rem;
-  min-width: 16rem;
-  max-width: 16rem;
-  border-radius: $border-radius;
-  padding: 1.5em 1em 1em 1em;
-  font-size: 0.9em;
-  min-height: calc(100vh - 6.5em);
   .btn, .btn-flat {
+    justify-content: flex-start;
     // padding: 0.7em 1.5em 0.7em 1.2em;
     // margin-bottom: 0.5em;
-    box-shadow: 0 0.1em 0.2em -0.1em #000;
   }
   .btn {
+    box-shadow: 0 0.1em 0.2em -0.1em #000;
     &:hover {
       box-shadow: 0 0.1em 0.2em -0.1em #000, 0 0.2em 0.5em -0.3em #000;
       &:active {
@@ -322,4 +337,10 @@ body {
     }
   }
 
+}
+
+
+
+#contenido .ficha:last-child {
+  margin-bottom: 0
 }

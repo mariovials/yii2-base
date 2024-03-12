@@ -1,9 +1,6 @@
 window.addEventListener("pageshow", () => {
 
   $('body').on('click', function(e) {
-    if ($(e.target).closest('.desplegable').length === 0) {
-      $('.desplegable').removeClass('activo');
-    }
     if ($(e.target).closest('#menu').length === 0
       && $('#menu').hasClass('activo')) {
       $('#menu').slideUp()
@@ -16,29 +13,25 @@ window.addEventListener("pageshow", () => {
     })
   })
 
-
-  $.ajax({
-    url: '/articulo/cantidad',
-    success: function(data) {
-      $('#btn-carro').find('.contador').html(data)
-      if (parseInt(data) > 0) {
-        $('#btn-carro')
-          .addClass('activo')
-          .append(`<span class="contador"> ${data} </span>`)
-      } else {
-        $('#btn-carro')
-          .removeClass('activo')
-          .find('.contador')
-          .remove()
-      }
-    },
+  $('#lista').on('click', '.item a', function() {
+    $(this).attr('href')
+    $.ajax({
+      url: url,
+      beforeSend: function() {
+        console.log('beforeSend')
+      },
+      success: function(data) {
+        console.log('success')
+        console.log(data)
+      },
+      error: function() {
+        console.log('error')
+      },
+      complete: function() {
+        console.log('complete')
+      },
+    })
   })
 
-  $('.desplegable').on('click', function(e) {
-    $(this).toggleClass('activo')
-    if (e.target.tagName == 'LI') {
-      $(this).find('> div').html($(e.target).html())
-    }
-  })
 
 })

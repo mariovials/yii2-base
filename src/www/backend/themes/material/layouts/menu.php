@@ -7,46 +7,43 @@ use yii\helpers\Url;
 use common\helpers\Html;
 
 $menu = [
-  'orden' => [
-    'url' => ['/ordenes'],
-    'icono' => 'text-box',
-    'texto' => 'Órdenes',
-    'contador' => Orden::find()->nuevas()->count(),
-  ],
-  'telemedicina' => [
-    'url' => ['/telemedicina'],
-    'icono' => 'video-account',
-    'texto' => 'Telemedicina',
-    'contador' => Telemedicina::find()->nuevas()->count(),
+  'publicacion' => [
+    'url' => ['/publicaciones'],
+    'icono' => 'book-open',
+    'texto' => 'Publicaciones',
   ],
   ['divider'],
-  'examen' => [
-    'url' => ['/examen'],
-    'icono' => 'flask-outline',
-    'texto' => 'Examen',
+  'autor' => [
+    'url' => ['/autores'],
+    'icono' => 'account',
+    'texto' => 'Autores',
   ],
-  'paquete' => [
-    'url' => ['/paquete'],
-    'icono' => 'package',
-    'texto' => 'Paquete',
+  'editor' => [
+    'url' => ['/editores'],
+    'icono' => 'account-edit',
+    'texto' => 'Editores',
+  ],
+  'editorial' => [
+    'url' => ['/editoriales'],
+    'icono' => 'bank',
+    'texto' => 'Editoriales',
+  ],
+  'idioma' => [
+    'url' => ['/idiomas'],
+    'icono' => 'translate',
+    'texto' => 'Idiomas',
   ],
   ['divider'],
-  'compra' => [
-    'url' => ['/compra'],
-    'icono' => 'cash-register',
-    'texto' => 'Compras',
+  'usuario' => [
+    'url' => ['/usuarios'],
+    'icono' => 'account-multiple',
+    'texto' => 'Usuarios',
   ],
-  ['divider'],
   'configuracion' => [
     'url' => ['/configuracion'],
     'icono' => 'cog',
     'texto' => 'Configuración',
     'activo' => in_array(Yii::$app->controller->id, ['configuracion', 'region', 'comuna'])
-  ],
-  'usuario' => [
-    'url' => ['/usuario'],
-    'icono' => 'account-multiple',
-    'texto' => 'Usuarios',
   ],
 ];
 
@@ -62,34 +59,6 @@ foreach ($menu as $id => $item) {
 foreach ($menu as $id => $item) {
   if ($item == ['divider']) continue;
   $menu[$id]['contador'] = $item['contador'] ?? null;
-}
-
-if ($menu['orden']['activo']) {
-  foreach (OrdenEstado::$estados as $id => $estado) { if (!$id) continue;
-    $menu['orden']['submenu'][] = [
-      'id' => "orden-estado-$id",
-      'url' => ['/orden/indice', 'OrdenSearch' => ['estado' => $id]],
-      'icono' => $estado['icono'],
-      'texto' => $estado['nombre'],
-      'class' => "estado-$id",
-      'contador' => orden::find()->where(['estado' => $id])->count(),
-      'activo' => Yii::$app->session->get('submenu-activo') == "orden-estado-$id",
-    ];
-  }
-}
-
-if ($menu['telemedicina']['activo']) {
-  foreach (TelemedicinaEstado::$estados as $id => $estado) { if (!$id) continue;
-    $menu['telemedicina']['submenu'][] = [
-      'id' => "telemedicina-estado-$id",
-      'url' => ['/telemedicina/indice', 'TelemedicinaSearch' => ['estado' => $id]],
-      'icono' => $estado['icono'],
-      'texto' => $estado['nombre'],
-      'class' => "estado-$id",
-      'contador' => Telemedicina::find()->where(['estado' => $id])->count(),
-      'activo' => Yii::$app->session->get('submenu-activo') == "telemedicina-estado-$id",
-    ];
-  }
 }
 ?>
 
@@ -145,28 +114,3 @@ if ($menu['telemedicina']['activo']) {
   </ul>
 </div>
 
-<?php if ($menu['telemedicina']['activo']): ?>
-<style>
-  <?php foreach (TelemedicinaEstado::$estados as $id => $estado): ?>
-  #submenu-telemedicina .estado-<?= $id ?>.activo {
-    background: <?= $estado['color'] ?>;
-  }
-  #submenu-telemedicina .estado-<?= $id ?>:hover {
-    background: <?= $estado['color'] ?>77;
-  }
-  <?php endforeach ?>
-</style>
-<?php endif ?>
-
-<?php if ($menu['orden']['activo']): ?>
-<style>
-  <?php foreach (OrdenEstado::$estados as $id => $estado): ?>
-  #submenu-orden .estado-<?= $id ?>.activo {
-    background: <?= $estado['color'] ?>;
-  }
-  #submenu-orden .estado-<?= $id ?>:hover {
-    background: <?= $estado['color'] ?>77;
-  }
-  <?php endforeach ?>
-</style>
-<?php endif ?>

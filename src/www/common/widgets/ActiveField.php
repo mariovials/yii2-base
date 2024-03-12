@@ -91,4 +91,10 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     return parent::label($label, $options);
   }
+
+  public function number($options = [])
+  {
+    $this->input('number', $options);
+    return $this;
+  }
 }

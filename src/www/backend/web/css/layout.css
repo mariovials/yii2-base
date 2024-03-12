@@ -30,11 +30,7 @@
 
 #principal {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: stretch;
   padding: 1em 0;
-  min-height: calc(100vh - 4rem);
 }
 
 #cuerpo {
@@ -42,16 +38,34 @@
   flex-direction: column;
   width: 100%;
   margin: 0 0 0 1em;
-  width: calc(100% - 15.2em);
 }
 
 #contenido {
   width: 100%;
   margin-right: 1em;
+  height: calc(100vh - 6em);
+  overflow-y: auto;
+}
+#contenido::-webkit-scrollbar {
+  width: 10px;
+}
+#contenido::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+#contenido::-webkit-scrollbar-thumb {
+  background: #CCC;
+  border-radius: 0.3em;
+}
+#contenido::-webkit-scrollbar-thumb:hover {
+  background: #BBB;
+}
+#contenido .ficha.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
 }
 
 #main {
-  min-height: calc(100vh - 4rem);
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -63,10 +77,10 @@
   width: 16rem;
   min-width: 16rem;
   max-width: 16rem;
-  border-radius: 0.6em;
+  border-radius: 0.6em 0 0 0.6em;
   padding: 1.5em 1em 1em 1em;
   font-size: 0.9em;
-  min-height: calc(100vh - 6.5em);
+  height: calc(100vh - 6rem);
 }
 #lateral .divider {
   border: 1px solid #EEEEEE;
@@ -76,6 +90,9 @@
   border-bottom-color: #F3F3F3;
 }
 #lateral .btn, #lateral .btn-flat {
+  justify-content: flex-start;
+}
+#lateral .btn {
   box-shadow: 0 0.1em 0.2em -0.1em #000;
 }
 #lateral .btn:hover {
@@ -310,6 +327,10 @@
 }
 #menu-usuario ul li a:hover {
   background: #EEE;
+}
+
+#contenido .ficha:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=layout.css.map */

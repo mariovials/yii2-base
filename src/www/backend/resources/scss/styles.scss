@@ -11,30 +11,6 @@
 
 @import '../../../common/resources/scss/form.scss';
 
-.chip.wa-link,
-.chip.mailto {
-  background: #e0e0e0;
-}
-.chip.mailto {
-  &:hover {
-    background: #E8EAF6;
-    color: #3F51B5;
-  }
-}
-.chip.wa-link {
-  &:hover {
-    background: #DCF8C6;
-    color: #00695C;
-  }
-}
-.chip.fecha {
-  background: #FFB74D;
-  color: #263238;
-  &.atrasada {
-    background: #E53935;
-    color: #FFEBEE;
-  }
-}
 .chip.alerta {
   background: #FDD835;
 }

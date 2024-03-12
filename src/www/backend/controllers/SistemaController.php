@@ -28,7 +28,6 @@ class SistemaController extends Controller
     return [
       'access' => [
         'class' => AccessControl::class,
-        'only' => ['ingresar', 'indice', 'salir'],
         'rules' => [
           [
             'allow' => true,
@@ -37,7 +36,7 @@ class SistemaController extends Controller
           ],
           [
             'allow' => true,
-            'actions' => ['indice', 'salir'],
+            'actions' => ['lista', 'salir'],
             'roles' => ['@'],
           ],
         ],
@@ -61,9 +60,9 @@ class SistemaController extends Controller
     ]);
   }
 
-  public function actionIndice()
+  public function actionLista()
   {
-    return $this->render('indice');
+    return $this->render('lista');
   }
 
   public function actionSalir()

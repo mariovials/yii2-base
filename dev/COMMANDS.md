@@ -1,1 +1,1 @@
-sass --watch src/www/frontend/resources/scss/:src/www/frontend/web/css/ src/www/backend/resources/scss/:src/www/backend/web/css/ src/www/common/resources/scss/
+sass --watch frontend/resources/scss/:frontend/web/css/ backend/resources/scss/:backend/web/css/ common/resources/scss/

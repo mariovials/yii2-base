@@ -26,4 +26,8 @@ $this->title = $name;
       Póngase en contacto con nosotros si cree que se trata de un error del servidor. Muchas gracias.
   </p>
 
+  <br>
+
+  <?= Yii::$app->controller->id . "/" . Yii::$app->controller->action->id ?>
+
 </div>

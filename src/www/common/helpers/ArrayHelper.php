@@ -24,8 +24,12 @@ class ArrayHelper extends \yii\helpers\ArrayHelper
       case 1:
         return reset($words);
       case 2:
+        if (str_starts_with(mb_strtolower(strip_tags(end($words))), 'i'))
+          $final = ' e ';
         return implode($final, $words);
       default:
+        if (str_starts_with(mb_strtolower(strip_tags(end($words))), 'i'))
+          $final = ' e ';
         return implode($separador, array_slice($words, 0, -1)) . $final . end($words);
     }
   }

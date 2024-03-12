@@ -36,12 +36,12 @@ class ConfiguracionController extends Controller
    *
    * @return string
    */
-  public function actionIndice()
+  public function actionLista()
   {
     $dataProvider = new ActiveDataProvider([
       'query' => Configuracion::find(),
     ]);
-    return $this->render('indice', [
+    return $this->render('lista', [
       'dataProvider' => $dataProvider,
     ]);
   }
@@ -114,7 +114,7 @@ class ConfiguracionController extends Controller
   public function actionEliminar($id)
   {
     $this->findModel($id)->delete();
-    return $this->redirect(['index']);
+    return $this->redirect(['lista']);
   }
 
   /**

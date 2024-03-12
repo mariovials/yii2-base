@@ -4,7 +4,6 @@ namespace common\models;
 
 use Yii;
 use yii\base\NotSupportedException;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use common\behaviors\FechaBehavior;
@@ -28,17 +27,11 @@ class Usuario extends ActiveRecord implements IdentityInterface
     return $this::ESTADOS[$this->estado];
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public static function tableName()
   {
     return 'usuario';
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function behaviors()
   {
     return [
@@ -46,9 +39,6 @@ class Usuario extends ActiveRecord implements IdentityInterface
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function rules()
   {
     return [
@@ -78,69 +68,36 @@ class Usuario extends ActiveRecord implements IdentityInterface
     return parent::beforeSave($insert);
   }
 
-  /**
-   * Generates password hash from password and sets it to the model
-   *
-   * @param string $password
-   */
-  public function establecerContrasena($contrasena)
-  {
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public static function findIdentity($id)
   {
     return static::findOne(['id' => $id, 'estado' => self::ESTADO_ACTIVO]);
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public static function findIdentityByAccessToken($token, $type = null)
   {
     throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function getId()
   {
     return $this->getPrimaryKey();
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function getAuthKey()
   {
     return $this->auth_key;
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function validateAuthKey($authKey)
   {
     return $this->getAuthKey() === $authKey;
   }
 
-  /**
-   * Validates password
-   *
-   * @param string $password password to validate
-   * @return bool if password provided is valid for current usuario
-   */
   public function validarContrasena($password)
   {
     return Yii::$app->security->validatePassword($password, $this->contrasena);
   }
 
-  /**
-   * Generates "remember me" authentication key
-   */
   public function generateAuthKey()
   {
     $this->auth_key = Yii::$app->security->generateRandomString();

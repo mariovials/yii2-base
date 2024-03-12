@@ -67,12 +67,12 @@ class <?= $controllerClass ?> extends Controller
    *
    * @return string
    */
-  public function actionIndice()
+  public function actionLista()
   {
 <?php if (!empty($generator->searchModelClass)): ?>
     $searchModel = new <?= isset($searchModelAlias) ? $searchModelAlias : $searchModelClass ?>();
     $dataProvider = $searchModel->search($this->request->queryParams);
-    return $this->render('indice', [
+    return $this->render('lista', [
       'searchModel' => $searchModel,
       'dataProvider' => $dataProvider,
     ]);
@@ -80,7 +80,7 @@ class <?= $controllerClass ?> extends Controller
     $dataProvider = new ActiveDataProvider([
       'query' => <?= $modelClass ?>::find(),
     ]);
-    return $this->render('indice', [
+    return $this->render('lista', [
       'dataProvider' => $dataProvider,
     ]);
 <?php endif; ?>
@@ -148,7 +148,7 @@ class <?= $controllerClass ?> extends Controller
   public function actionEliminar(<?= $actionParams ?>)
   {
     $this->findModel(<?= $actionParams ?>)->delete();
-    return $this->redirect(['index']);
+    return $this->redirect(['lista']);
   }
 
   /**

@@ -14,6 +14,10 @@ class MaterialFormAsset extends AssetBundle
   ];
   public $sourcePath = '@common/web';
   public $js = [
-    'js/form.js?v=9',
+    'js/form.js?v=10',
+    'js/autocompletar.js?v=10',
+  ];
+  public $depends = [
+    'yii\web\JqueryAsset',
   ];
 }
