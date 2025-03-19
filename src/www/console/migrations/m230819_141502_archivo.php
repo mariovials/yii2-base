@@ -7,9 +7,6 @@ use yii\db\Migration;
  */
 class m230819_141502_archivo extends Migration
 {
-  /**
-   * {@inheritdoc}
-   */
   public function safeUp()
   {
     $this->createTable('archivo', [
@@ -33,9 +30,6 @@ class m230819_141502_archivo extends Migration
     ]);
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function safeDown()
   {
     $this->dropTable('archivo');

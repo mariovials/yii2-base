@@ -8,10 +8,10 @@ use yii\db\Migration;
 class m230901_205009_configuracion extends Migration
 {
 
-  // 1 'integer' => 'Integer (Número entero)' ,
-  // 2 'string' => 'String (Texto)',
-  // 3 'boolean' => 'Boolean (Si/No)',
-  // 4 'time' => 'Time (Hora)',
+  // 1 'integer' => 'Integer (Número entero)'
+  // 2 'string'  => 'String (Texto)'
+  // 3 'boolean' => 'Boolean (Si/No)'
+  // 4 'time'    => 'Time (Hora)'
 
   public function safeUp()
   {
@@ -33,9 +33,6 @@ class m230901_205009_configuracion extends Migration
 
   }
 
-  /**
-   * {@inheritdoc}
-   */
   public function safeDown()
   {
     $this->dropTable('configuracion');
