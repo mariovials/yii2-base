@@ -2,9 +2,9 @@
 
 namespace common\models;
 
+use backend\components\ActiveRecord;
 use Yii;
 use yii\base\NotSupportedException;
-use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use common\behaviors\FechaBehavior;
 

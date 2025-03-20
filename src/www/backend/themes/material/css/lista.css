@@ -25,6 +25,7 @@ div.lista > header .sorter {
 div.lista .items .item {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 0.4em 1em;
 }
 div.lista .items .item .informacion {
@@ -91,37 +92,22 @@ div.lista .items .item .informacion .texto .label {
 div.lista .items .item .opciones {
   display: flex;
   align-items: center;
+  column-gap: 0.3em;
+}
+div.lista .items .item .opciones .opcion .btn.solo {
+  padding: 0em 1em 0em 1em;
+  padding: 0em 0.5em 0em 0.5em;
+}
+div.lista .items .item .opciones .opcion .btn {
+  font-weight: 500;
+  border-radius: 2em;
+  padding: 0em 1.2em 0em 1.2em;
 }
 div.lista .items .item .opciones .opcion {
-  margin-left: 0.3em;
   white-space: nowrap;
 }
-div.lista .items .item .opciones .opcion a {
-  color: #607D8B;
-  background: #E0F2F1;
-  border-radius: 2em;
-  width: 2em;
-  height: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-div.lista .items .item .opciones .opcion a .mdi {
-  font-size: 1.4em;
-}
-div.lista .items .item .opciones .opcion a:hover {
-  background: #B2DFDB;
-}
 div.lista .items .item .opciones .opcion.grande a {
-  width: auto;
-  padding: 0 1.2em 0 1em;
   font-weight: 500;
-}
-div.lista .items .item .opciones .opcion.grande a .mdi {
-  margin-right: 0.1em;
-}
-div.lista .items .item:hover .opcion a {
-  color: #607D8B;
 }
 div.lista .items .item.no-leida {
   box-shadow: 0 0.1em 0.2em -0.1em #000;
@@ -177,9 +163,9 @@ ul.pagination li a {
   font-size: inherit;
   display: block;
   width: 100%;
-  padding: 1em 0;
+  padding: 0;
   color: #424242;
-  border-radius: 2em;
+  border-radius: 0.4em;
 }
 ul.pagination li.active a {
   background: #B2DFDB;

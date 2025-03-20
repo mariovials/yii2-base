@@ -1,0 +1,23 @@
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  height: 2.8rem;
+  overflow: hidden;
+}
+.breadcrumb > li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  font-weight: 500;
+}
+.breadcrumb > li a {
+  padding: 0.6em 0;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.breadcrumb > .mdi {
+  color: #CCC;
+}

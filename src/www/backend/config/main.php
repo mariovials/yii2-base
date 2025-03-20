@@ -15,6 +15,7 @@ return [
   'defaultRoute' => 'sistema/lista',
   'components' => [
     'view' => [
+      'class' => 'backend\components\View',
       'theme' => [
         'basePath' => '@backend/themes/material',
         'pathMap' => [

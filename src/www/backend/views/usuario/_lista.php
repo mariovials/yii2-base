@@ -20,8 +20,13 @@ use yii\helpers\Url;
   </div>
   <div class="opciones">
     <div class="opcion">
-      <a href="<?= Url::to(['usuario/editar', 'id' => $model->id, 'to' => Url::current()]) ?>">
-        <span class="mdi mdi-pencil"></span>
+      <a class="btn" href="<?= Url::to(['usuario/editar', 'id' => $model->id, 'to' => Url::current()]) ?>">
+        <span class="mdi mdi-pencil"></span> Editar
+      </a>
+    </div>
+    <div class="opcion">
+      <a class="btn solo" href="<?= Url::to(['usuario/editar', 'id' => $model->id, 'to' => Url::current()]) ?>">
+        <span class="mdi mdi-delete"></span>
       </a>
     </div>
   </div>

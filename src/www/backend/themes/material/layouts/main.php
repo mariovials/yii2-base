@@ -1,10 +1,16 @@
 <?php
 
 use backend\assets\AppAsset;
+use backend\themes\material\ThemeAsset;
+use backend\widgets\breadcrumb\Breadcrumb;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 AppAsset::register($this);
+ThemeAsset::register($this);
+
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
@@ -23,7 +29,7 @@ AppAsset::register($this);
     <header id="header">
       <div class="izquierda">
         <a id="logo" href="<?= Yii::$app->urlManagerBackend->createAbsoluteUrl('/') ?>">
-          <img src="/img/logo.png" alt="">
+          <img src="<?= Url::to(['/img/logo.png']) ?>" alt="">
         </a>
       </div>
       <div class="central">
@@ -41,11 +47,11 @@ AppAsset::register($this);
               <?php if (!Yii::$app->user->isGuest): ?>
                 <?= Yii::$app->user->identity->nombreCompleto ?>
               <?php endif ?>
-              <img src="/img/user.png" alt="">
+              <img src="<?= Url::to(['/img/user.png']) ?>" alt="">
             </div>
             <ul id="desplegable-usuario" class="desplegable">
               <li>
-                <a href="/sistema/salir">
+                <a href="<?= Url::to(['/sistema/salir']) ?>">
                   <span class="mdi mdi-logout"></span> Salir
                 </a>
               </li>
@@ -59,52 +65,35 @@ AppAsset::register($this);
 
       <?= $this->render('menu') ?>
 
-      <?php if (isset($this->params['submenu'])) { ?>
-      <div id="menu">
-        <ul>
-          <?php
-          foreach ($this->params['submenu'] as $i => $item) {
-            if ($item == 'divider') {
-              echo '<li class="divider"></li>';
-            } else {
-              echo "<li>$item</li>";
-            }
-          }
-          ?>
-        </ul>
-      </div>
-      <?php } ?>
-
       <div id="cuerpo">
-
-        <header>
-        </header>
 
         <div id="main">
 
           <div id="contenido">
-            <?= $content ?>
+
+            <div id="head">
+              <div class="icono">
+                <span class="mdi mdi-circle"></span>
+              </div>
+              <?= Breadcrumb::widget(['links' => $this->breadcrumb]) ?>
+            </div>
+
+            <div id="content">
+              <?= $content ?>
+            </div>
           </div>
 
           <div id="lateral">
-            <div class="principal">
-              <?php if (isset($this->params['menu'])) { ?>
-              <ul class="menu">
-                <?php
-                foreach ($this->params['menu'] as $i => $item) {
-                  if ($item == 'divider') {
-                    echo '<li class="divider"></li>';
-                  } else {
-                    echo "<li>$item</li>";
-                  }
-                }
-                ?>
-              </ul>
-              <?php } ?>
-            </div>
-            <div class="secundario">
-              <?= $this->params['lateral'] ?? ''; ?>
-            </div>
+            <?php
+            foreach ($this->opciones as $item) {
+              if ($item == 'divider') {
+                echo '<div class="divider"></div>';
+              } else {
+                echo $item;
+              }
+            }
+            ?>
+            <?= $this->params['lateral'] ?? ''; ?>
           </div>
 
         </div>

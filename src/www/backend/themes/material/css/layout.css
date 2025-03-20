@@ -1,24 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
-:root {
-  --color-1: #00897b;
-  --color-1-dark: #00796B;
-  --background-1: #E0F2F1;
-}
-
-* {
-  font-family: "Noto Sans", "Tahoma", sans-serif;
-}
 
 #pagina {
-  background: #ECEFF1;
+  font-family: "Noto Sans", "Tahoma", sans-serif;
+  background: #f2f5f7;
+  padding: 0 0 1em 0;
 }
 
 #header {
   display: flex;
   justify-content: space-between;
   height: 4rem;
-  background: #FFF;
-  box-shadow: 0 0.4em 0.5em -0.8em #000;
+  background-color: #FFF;
+  border-bottom: 1px solid #EEE;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 #header > div {
   display: flex;
@@ -30,7 +25,6 @@
 
 #principal {
   display: flex;
-  padding: 1em 0;
 }
 
 #cuerpo {
@@ -42,9 +36,7 @@
 
 #contenido {
   width: 100%;
-  margin-right: 1em;
-  height: calc(100vh - 6em);
-  overflow-y: auto;
+  border-radius: 0.9em 0 0 0.9em;
 }
 #contenido::-webkit-scrollbar {
   width: 10px;
@@ -65,22 +57,26 @@
   z-index: 99999;
 }
 
+#content {
+  height: calc(100vh - 9em);
+  overflow-y: auto;
+}
+
 #main {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: stretch;
+  column-gap: 1em;
 }
 
 #lateral {
-  background: #FFF;
   width: 16rem;
   min-width: 16rem;
   max-width: 16rem;
-  border-radius: 0.6em 0 0 0.6em;
   padding: 1.5em 1em 1em 1em;
-  font-size: 0.9em;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 5rem);
+  background-color: #FFF;
 }
 #lateral .divider {
   border: 1px solid #EEEEEE;
@@ -91,41 +87,15 @@
 }
 #lateral .btn, #lateral .btn-flat {
   justify-content: flex-start;
-}
-#lateral .btn {
-  box-shadow: 0 0.1em 0.2em -0.1em #000;
-}
-#lateral .btn:hover {
-  box-shadow: 0 0.1em 0.2em -0.1em #000, 0 0.2em 0.5em -0.3em #000;
-}
-#lateral .btn:hover:active {
-  box-shadow: 0 0.05em 0.2em -0.1em #000;
+  width: 100%;
 }
 #lateral .principal {
   margin-bottom: 1em;
 }
-#lateral .principal .btn, #lateral .principal btn-flat {
-  font-size: 1rem;
+#lateral .btn {
   margin-bottom: 0.3em;
 }
-#lateral .secundario {
-  font-size: 0.95em;
-}
-#lateral .secundario > .titulo {
-  font-size: 1.2em;
-  font-weight: 700;
-  margin: 0.5em 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  color: #424242;
-}
-#lateral .secundario > .titulo .mdi {
-  font-size: 1.1em;
-  margin-right: 0.3em;
-  color: #616161;
-}
+
 #lateral .link {
   padding: 0.6em 1em;
   display: block;
@@ -178,8 +148,7 @@
 #menu {
   min-width: 14rem;
   border-radius: 0 0.6em 0.6em 0;
-  padding: 1em 0.5em;
-  background: #FFF;
+  padding: 1em 0.5em 1em 0;
   height: calc(100vh - 6em);
 }
 #menu ul li {
@@ -192,10 +161,10 @@
 #menu ul li a {
   font-weight: 500;
   color: #555;
-  padding: 0.3em 1em;
+  padding: 0.5em 1em;
   display: flex;
   align-items: center;
-  border-radius: 2em;
+  border-radius: 0 2em 2em 0;
   letter-spacing: -0.01em;
   position: relative;
 }
@@ -333,4 +302,18 @@
   margin-bottom: 0;
 }
 
-/*# sourceMappingURL=layout.css.map */
+
+#head {
+  padding: 0.6rem 1rem 0.6rem 1.3rem;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  max-width: 100%;
+  overflow: hidden;
+  column-gap: 1em;
+  position: sticky;
+  top: 0;
+}
+#head .mdi {
+  font-size: 1.4em;
+}

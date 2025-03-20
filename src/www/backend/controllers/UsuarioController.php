@@ -2,9 +2,7 @@
 
 namespace backend\controllers;
 
-use Yii;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 use backend\components\Controller;
 use common\models\Usuario;
 
@@ -18,14 +16,14 @@ class UsuarioController extends Controller
    */
   public function behaviors()
   {
-    return [
+    return array_merge(parent::behaviors(), [
       'verbs' => [
         'class' => VerbFilter::class,
         'actions' => [
           'eliminar' => ['post'],
         ],
       ],
-    ];
+    ]);
   }
 
   public function actionLista()
@@ -61,4 +59,12 @@ class UsuarioController extends Controller
     }
     return $this->render('editar', ['model' => $model]);
   }
+
+  public function actionEliminar($id)
+  {
+    $model = Usuario::findOne($id);
+    $model->delete();
+    return $this->redirect($this->request->get('to', ['lista']));
+  }
+
 }

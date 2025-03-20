@@ -1,23 +1,14 @@
 <?php
+
 use common\widgets\ActiveForm;
+use yii\helpers\Url;
+
+$this->breadcrumb = [
+  ['label' => 'Usuarios', 'url' => ['usuario/lista']],
+  'Agregar',
+];
+
 ?>
-
-<?= $this->render('_indice') ?>
-
-<div class="ficha accion">
-  <header>
-    <div class="principal">
-      <div class="icono">
-        <span class="mdi mdi-plus-thick"></span>
-      </div>
-      <div class="titulo">
-        <div class="nombre">
-          Agregar usuario
-        </div>
-      </div>
-    </div>
-  </header>
-</div>
 
 <div class="form">
   <?php $form = ActiveForm::begin(); ?>
@@ -71,7 +62,7 @@ use common\widgets\ActiveForm;
       </button>
     </div>
     <div class="opcion">
-      <a href="/usuario" class="btn-flat solo">
+      <a href="<?= Url::to(Yii::$app->request->get('from', ['lista'])) ?>" class="btn flat solo">
         Cancelar
       </a>
     </div>

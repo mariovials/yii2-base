@@ -35,9 +35,10 @@
   border-radius: 0.6em;
   margin-bottom: 1em;
   background: #FFF;
+  box-shadow: 0 0.1em 0.4em -0.3em #78909c;
 }
 .ficha > header {
-  padding: 1.2em 1.5em 1.2em 1.5em;
+  padding: 1em 1.4em 1em 1.4em;
   align-items: center;
   justify-content: space-between;
   display: flex;
@@ -55,7 +56,7 @@
   justify-content: center;
 }
 .ficha > header .principal .icono .mdi {
-  font-size: 2em;
+  font-size: 1.6em;
 }
 .ficha > header .principal .icono .numero {
   font-weight: 800;
@@ -91,18 +92,15 @@
 .ficha > header .opciones .opcion {
   margin-left: 0.5em;
 }
-.ficha > header .opciones .opcion .btn .mdi,
-.ficha > header .opciones .opcion .btn-flat .mdi {
+.ficha > header .opciones .opcion .btn .mdi {
   font-size: 1.4rem;
   vertical-align: sub;
 }
-.ficha > header .opciones .opcion .btn.solo,
-.ficha > header .opciones .opcion .btn-flat.solo {
+.ficha > header .opciones .opcion .btn.solo {
   padding-right: 0.8em;
   padding-left: 0.8em;
 }
-.ficha > header .opciones .opcion .btn.solo .mdi,
-.ficha > header .opciones .opcion .btn-flat.solo .mdi {
+.ficha > header .opciones .opcion .btn.solo .mdi {
   margin-right: 0;
 }
 .ficha > header .opciones .opcion .btn.grande,
@@ -110,8 +108,7 @@
   padding: 0.1em 0.2em;
   border-radius: 0.5em;
 }
-.ficha > header .opciones .opcion .btn.grande .mdi,
-.ficha > header .opciones .opcion .btn-flat.grande .mdi {
+.ficha > header .opciones .opcion .btn.grande .mdi {
   font-size: 2rem;
 }
 .ficha > main {

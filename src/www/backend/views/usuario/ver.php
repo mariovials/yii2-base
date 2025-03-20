@@ -1,8 +1,20 @@
 <?php
-use common\widgets\ActiveForm;
-?>
 
-<?= $this->render('_indice') ?>
+use common\helpers\Html;
+use yii\helpers\Url;
+
+$this->breadcrumb = [
+  ['label' => 'Usuarios', 'url' => ['usuario/lista']],
+  ['label' => $model->nombre, 'url' => $model->url],
+];
+$this->opciones[] = Html::a(
+  '<span class="mdi mdi-delete"></span>Eliminar',
+  ['eliminar', 'id' => $model->id, 'to' => Url::to(['lista'])],
+  ['class' => 'btn flat', 'data' => [
+    'method' => 'post',
+    'confirm' => '¿Está seguro de que desea eliminar este usuario?',
+  ]]);
+?>
 
 <div class="ficha">
   <header>
@@ -41,11 +53,10 @@ use common\widgets\ActiveForm;
   <footer>
     <div class="opciones">
       <div class="opcion">
-        <a href="<?= $model->id ?>/editar?from=<?= \yii\helpers\Url::current() ?>"
-          class="btn">
-          <span class="mdi mdi-pencil"></span>
-          Editar
-        </a>
+        <?= Html::a(
+          '<span class="mdi mdi-pencil"></span>Editar',
+          ['editar', 'id' => $model->id, 'from' => Url::current(), 'to' => Url::current()],
+          ['class' => 'btn']); ?>
       </div>
     </div>
   </footer>

@@ -1,10 +1,20 @@
 <?php
+
 use yii\data\ActiveDataProvider;
 use backend\widgets\ListView;
+use common\helpers\Html;
 use common\models\Usuario;
-?>
 
-<?= $this->render('_indice', ['opciones' => ['agregar']]) ?>
+$this->title = 'Usuarios';
+$this->breadcrumb = [
+  ['label' => 'Usuarios', 'url' => ['usuario/lista']]
+];
+$this->opciones[] = Html::a(
+  '<span class="mdi mdi-plus"></span>Agregar',
+  ['agregar'],
+  ['class' => 'btn']);
+
+?>
 
 <div class="ficha lista">
   <main>

@@ -6,6 +6,7 @@ use common\models\Editor;
 use common\models\Idioma;
 use common\models\Persona;
 use common\models\Editorial;
+use yii\helpers\Url;
 
 $this->title = 'Admin';
 ?>
@@ -26,13 +27,13 @@ $this->title = 'Admin';
 
   <div class="contadores">
 
-    <a class="contador" href="/publicaciones">
+    <a class="contador" href="<?= Url::to(['/publicaciones']) ?>">
       <div class="icono">
         <span class="mdi mdi-book-open"></span>
       </div>
       <div class="texto">
         <div class="numero">
-          <?= Publicacion::find()->count() ?>
+          10
         </div>
         <div class="texto">
           Publicaciones
@@ -46,9 +47,7 @@ $this->title = 'Admin';
       </div>
       <div class="texto">
         <div class="numero">
-          <?= Persona::find()
-            ->where(['id' => Autor::find()->select('persona_id')])
-            ->count() ?>
+          20
         </div>
         <div class="texto">
           Autores
@@ -62,9 +61,7 @@ $this->title = 'Admin';
       </div>
       <div class="texto">
         <div class="numero">
-          <?= Persona::find()
-            ->where(['id' => Editor::find()->select('persona_id')])
-            ->count() ?>
+          30
         </div>
         <div class="texto">
           Editores
@@ -78,7 +75,7 @@ $this->title = 'Admin';
       </div>
       <div class="texto">
         <div class="numero">
-          <?= Idioma::find()->count() ?>
+          40
         </div>
         <div class="texto">
           Idiomas
@@ -92,7 +89,8 @@ $this->title = 'Admin';
       </div>
       <div class="texto">
         <div class="numero">
-          <?= Editorial::find()->count() ?>
+          50
+          <?php // Editorial::find()->count() ?>
         </div>
         <div class="texto">
           Editoriales

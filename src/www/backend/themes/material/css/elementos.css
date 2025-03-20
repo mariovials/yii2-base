@@ -1,0 +1,168 @@
+.btn {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.2em;
+  border: none;
+  color: #455A64;
+  background: #ECEFF1;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  line-height: 1.9rem;
+  padding: 0.2em 1.4em;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 0.4em;
+}
+.btn:hover {
+  background: #e1e5e7;
+}
+.btn:active {
+  box-shadow: none;
+  background: #d7dcdf;
+}
+.btn .mdi {
+  font-size: 1.2rem;
+}
+.btn.bajo {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.btn.bajo .mdi {
+  vertical-align: middle;
+}
+.btn.solo {
+  padding-right: 1.3em;
+  padding-left: 1.3em;
+}
+
+.btn[disabled] {
+  pointer-events: none;
+  box-shadow: none !important;
+  background: #EEEEEE !important;
+  color: #BBBBBB !important;
+}
+.btn.icon-right {
+  padding: 0.5em 1.5em 0.5em 2em;
+}
+.btn.icon-right .mdi {
+  margin-left: 0;
+  margin-right: 0;
+}
+.btn:hover {
+}
+
+.btn.flat {
+  background: none;
+  box-shadow: none;
+}
+.btn.flat:hover {
+  background: #ECEFF1;
+}
+.btn.flat[disabled] {
+  color: #EEEEEE;
+}
+
+.nota {
+  background: #E1F5FE;
+  padding: 1em 1.5em;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.nota .titulo {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.nota .descripcion b {
+  font-weight: 600;
+}
+
+.chip {
+  background: rgba(96, 125, 139, 0.1254901961);
+  border-radius: 1em;
+  display: inline-block;
+  margin-right: 0.3em;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: #455A64;
+  margin: 0.05em 0.5em 0.05em 0;
+  padding: 0.1em 1em 0.1em 1em;
+  line-height: inherit;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.chip .mdi {
+  margin-right: 0.3em;
+  margin-left: -0.3em;
+}
+.chip a {
+  color: inherit;
+}
+.chip.icon-right .mdi {
+  margin-left: 0.3em;
+  margin-right: -0.3em;
+}
+.chip.flat {
+  background: none;
+  padding: 0.1em 0.2em;
+}
+.chip.flat.hover {
+  padding: 0.1em 0.7em;
+}
+.chip.flat.hover:hover {
+  background: #EEE;
+}
+
+.desplegable {
+  position: relative;
+  cursor: default;
+}
+.desplegable > div {
+  position: relative;
+  padding: 0em 0.2em;
+  border-radius: 0.1em;
+  border: 1px solid #767676;
+  user-select: none;
+  line-height: 1.313em;
+}
+.desplegable > div:after {
+  content: "";
+  position: absolute;
+  right: 0.3em;
+  border: solid 0.15em #000;
+  border-right: none;
+  border-top: none;
+  width: 0.3em;
+  height: 0.3em;
+  transform: translateY(0.3em) rotate(-45deg);
+}
+.desplegable > ul {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0.1em 0.4em -0.2em #000;
+  background: #FFFFFF;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid #CCC;
+  overflow: hidden;
+  border-radius: 0.4em;
+}
+.desplegable > ul > li {
+  padding: 0em 0.2em;
+  line-height: 1.313em;
+}
+.desplegable > ul > li:hover {
+  background: rgb(var(--default-background, 33, 150, 243));
+  color: #FFFFFF;
+}
+.desplegable.activo > ul {
+  display: block;
+  z-index: 2;
+}

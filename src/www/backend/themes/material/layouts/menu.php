@@ -114,3 +114,20 @@ foreach ($menu as $id => $item) {
   </ul>
 </div>
 
+
+
+<?php if (isset($this->params['submenu'])) { ?>
+<div id="menu">
+  <ul>
+    <?php
+    foreach ($this->params['submenu'] as $i => $item) {
+      if ($item == 'divider') {
+        echo '<li class="divider"></li>';
+      } else {
+        echo "<li>$item</li>";
+      }
+    }
+    ?>
+  </ul>
+</div>
+<?php } ?>

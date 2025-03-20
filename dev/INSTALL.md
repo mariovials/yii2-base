@@ -4,7 +4,6 @@ git config --global init.defaultBranch master
 git config --global user.email "mariovials@gmail.com"
 git config --global user.name "Mario Vial"
 
-
 sudo apt install postgresql
 sudo vi /etc/postgresql/15/main/postgresql.conf
 sudo vi /etc/postgresql/15/main/pg_hba.conf

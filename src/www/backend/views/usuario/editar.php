@@ -1,26 +1,15 @@
 <?php
 use common\widgets\ActiveForm;
+use yii\helpers\Url;
+
+
+$this->breadcrumb = [
+  ['label' => 'Usuarios', 'url' => ['/usuario']],
+  ['label' => $model->nombre, 'url' => $model->url],
+  'Editar',
+];
+
 ?>
-
-<?= $this->render('_indice') ?>
-
-<div class="ficha">
-  <header>
-    <div class="principal">
-      <div class="icono">
-        <span class="mdi mdi-account"></span>
-      </div>
-      <div class="titulo">
-        <div class="nombre">
-          <a href="/usuario/<?= $model->id ?>">
-           <?= $model->nombre; ?>
-           <?= $model->apellido; ?>
-         </a>
-        </div>
-      </div>
-    </div>
-  </header>
-</div>
 
 <div class="form">
   <?php $form = ActiveForm::begin(); ?>
@@ -73,8 +62,8 @@ use common\widgets\ActiveForm;
       </button>
     </div>
     <div class="opcion">
-      <a href="<?= Yii::$app->request->get('from', '/usuario') ?>"
-        class="btn-flat solo">
+      <a href="<?= Yii::$app->request->get('from', Url::to(['/usuario'])) ?>"
+        class="btn flat solo">
         Cancelar
       </a>
     </div>

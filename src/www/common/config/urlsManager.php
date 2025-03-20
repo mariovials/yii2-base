@@ -5,11 +5,13 @@
  * /src/www/common/config/bootstrap-local.php
  */
 
+use yii\web\UrlManager;
+
 $commonRules = [
 ];
 $urlsManager = [
   'frontend' => [
-    'class' => 'yii\web\UrlManager',
+    'class' => UrlManager::class,
     'hostInfo' => FRONTEND_HOST,
     'enablePrettyUrl' => true,
     'showScriptName' => false,
@@ -20,10 +22,11 @@ $urlsManager = [
     ], $commonRules),
   ],
   'backend' => [
-    'class' => 'yii\web\UrlManager',
+    'class' => UrlManager::class,
     'hostInfo' => BACKEND_HOST,
     'enablePrettyUrl' => true,
     'showScriptName' => false,
+    'baseUrl' => '/admin',
     'rules' => [
       '<controller:(publicacion|autor|editor|editorial)>es' => '<controller>/lista',
       '<controller:(idioma|usuario)>s' => '<controller>/lista',
@@ -39,6 +42,7 @@ $urlsManager = [
     ],
   ],
 ];
+
 $componentsUrlsManager = [];
 foreach ($urlsManager as $id => $urlManager) {
   $componentsUrlsManager['urlManager' . ucfirst($id)] = $urlManager;
@@ -46,4 +50,5 @@ foreach ($urlsManager as $id => $urlManager) {
     $componentsUrlsManager['urlManager'] = $urlManager;
   }
 }
+
 return $componentsUrlsManager;

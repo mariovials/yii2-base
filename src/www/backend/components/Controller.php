@@ -1,10 +1,11 @@
 <?php
+
 namespace backend\components;
 
 use yii\filters\AccessControl;
 
 /**
- *
+ * Default Controller para backend
  */
 class Controller extends \yii\web\Controller
 {
