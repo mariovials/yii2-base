@@ -1,8 +1,8 @@
 <?php
 use common\models\Configuracion;
 use backend\widgets\ListView;
-use yii\data\ActiveDataProvider;
 use common\helpers\Html;
+use yii\data\ActiveDataProvider;
 
 $configuraciones = [
   [
@@ -14,14 +14,17 @@ $configuraciones = [
   ],
 ];
 
-$this->title = 'Configuraciones';
+$this->title = 'Configuración';
+$this->breadcrumb = [
+  ['label' => $this->title, 'url' => ['/configuracion']],
+];
+$this->opciones[] = Html::a(
+  '<span class="mdi mdi-plus"></span>Agregar',
+  ['agregar'],
+  ['class' => 'btn']);
 ?>
 
 <div class="configuracion indice">
-
-  <?= $this->render('_indice', ['opciones' => [
-    (YII_ENV == 'dev') ? 'agregar' : null,
-  ]]) ?>
 
   <?php foreach ($configuraciones as $configuracion): ?>
   <div class="ficha lista">

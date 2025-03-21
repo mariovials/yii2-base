@@ -1,6 +1,4 @@
 <?php
-use yii\helpers\Inflector;
-use yii\helpers\StringHelper;
 
 /* @var $generator yii\gii\generators\crud\Generator */
 
@@ -20,18 +18,16 @@ $attributes = $attributes ?? array_keys($model->attributes);
 <?php
 $tableSchema = $generator->getTableSchema();
 foreach($tableSchema->columns as $column) {
-  if ($column->autoIncrement | !in_array($column->name, $safeAttributes))
+  if ($column->autoIncrement || !in_array($column->name, $safeAttributes))
+    continue;
+  if (in_array($column->name, ['fecha_creacion', 'fecha_edicion']))
     continue;
 ?>
   <?= "<?php if (in_array('{$column->name}', \$attributes)): ?>\n"; ?>
   <div class="fila">
-    <div class="icono">
-      <i class="mdi mdi-text-box"></i>
-    </div>
-    <div class="campos">
-      <div class="campo <?= $column->name ?> grande">
-        <?= '<?=' ?> $form->field($model, '<?= $column->name ?>'); ?>
-      </div>
+    <div class="campo <?= $column->name ?> grande">
+      <span class="mdi mdi-text-box"></span>
+      <?= '<?=' ?> $form->field($model, '<?= $column->name ?>'); ?>
     </div>
   </div>
   <?= "<?php endif; ?>\n"; ?>

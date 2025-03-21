@@ -15,18 +15,24 @@ echo "<?php\n";
 ?>
 use <?= $generator->modelClass ?>;
 use backend\widgets\ListView;
+use common\helpers\Html;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Url;
 
 $this->title = '<?= $textClass ?>s';
+$this->icono = '<?= $generator->icono ?>';
+$this->breadcrumb = [ '<?= $textClass ?>s'];
+$this->opciones[] = Html::a(
+  '<span class="mdi mdi-plus"></span> Agregar',
+  ['/<?= $cssClass ?>/agregar', 'from' => Url::current(), 'to' => Url::current()],
+  [ 'class' => 'btn'],
+);
 ?>
 
 <div class="<?= $cssClass ?> indice">
 
-  <?= '<?=' ?> $this->render('_indice', ['opciones' => ['agregar']]) ?>
-
   <div class="ficha lista">
     <main>
-      <br>
       <?= '<?=' ?> ListView::widget([
         'dataProvider' => new ActiveDataProvider([
           'query' => <?= $baseName ?>::find(),

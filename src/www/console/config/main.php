@@ -17,10 +17,13 @@ return [
     '@npm'   => '@vendor/npm-asset',
   ],
   'controllerMap' => [
+    'migrate' => [
+      'class' => 'console\controllers\MigrateController',
+    ],
     'fixture' => [
       'class' => \yii\console\controllers\FixtureController::class,
       'namespace' => 'common\fixtures',
-      ],
+    ],
   ],
   'components' => [
     'log' => [

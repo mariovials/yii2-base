@@ -18,20 +18,31 @@ if ($generator->enableI18N) {
 
 $baseName = StringHelper::basename($generator->modelClass);
 $cssClass = Inflector::camel2id($baseName);
+$tableSchema = $generator->getTableSchema();
+$textClass = Inflector::camel2words($baseName);
 
 echo "<?php\n";
 ?>
+
 $this->title = 'Editar ' . $model-><?= $generator->getNameAttribute() ?>;
+$this->icono = '<?= $generator->icono ?>';
+$this->breadcrumb = [
+  ['label' => '<?= $textClass ?>', 'url' => ['/<?= $cssClass ?>']],
+  ['label' => $model-><?= $generator->getNameAttribute() ?>, 'url' => $model->url],
+  'Editar',
+];
+
 ?>
 
 <div class="<?= $cssClass ?> editar">
 
-  <?= '<?=' ?> $this->render('_indice') ?>
-
-  <div class="ficha">
-    <?= '<?=' ?> $this->render('_header', ['model' => $model]) ?>
-  </div>
-
-  <?= '<?=' ?> $this->render('_form', ['model' => $model]); ?>
+  <?= '<?=' ?> $this->render('_form', [
+    'model' => $model,
+    'attributes' => [
+<?php foreach ($tableSchema->columns as $column) {
+  echo "      '{$column->name}',\n";
+} ?>
+    ],
+  ]); ?>
 
 </div>

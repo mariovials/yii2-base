@@ -2,7 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -166,8 +167,18 @@ html body {
   background: rgba(236, 239, 241, 0.4666666667);
 }
 
-* {
-  font-family: "Montserrat", "Arial", sans-serif;
+#pagina {
+  font-family: "Poppins", "Tahoma", sans-serif;
+  background-color: #EEE;
+}
+
+#wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-width: 80rem;
+  margin: 0 auto;
+  overflow-y: hidden;
 }
 
 .wrapper {
@@ -197,41 +208,23 @@ nav {
   max-height: 5em;
 }
 
-#main {
-  min-height: calc(100vh - 9.4rem);
+#content {
+  background-color: #DDD;
+  min-height: calc(200vh);
+  width: 100%;
 }
 
 #menu {
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  background-color: #DDD;
 }
 #menu > li {
-  display: block;
 }
 #menu > li > a {
   padding: 1em 1em;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #607D8B;
   display: block;
-}
-#menu > li > a.btn {
-  border-radius: 0.3em;
-  background: #607D8B;
-  color: #FFF;
-  background: #CFD8DC;
-  color: #546E7A;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  margin-left: 1em;
-}
-#menu > li > a.btn .mdi {
-  font-size: 1.3em;
-  margin-left: 0.1em;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 #menu-wrapper {

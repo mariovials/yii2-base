@@ -13,6 +13,7 @@ $urlsManager = [
   'frontend' => [
     'class' => UrlManager::class,
     'hostInfo' => FRONTEND_HOST,
+    'baseUrl' => '',
     'enablePrettyUrl' => true,
     'showScriptName' => false,
     'rules' => array_merge([

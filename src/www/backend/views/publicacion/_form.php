@@ -23,7 +23,7 @@ $attributes = $attributes ?? array_keys($model->attributes);
       </button>
     </div>
     <div class="opcion">
-      <a href="<?= Url::to(['/publicaciones']) ?>" class="btn-flat solo">
+      <a href="<?= Url::to(['/publicaciones']) ?>" class="btn flat solo">
         Cancelar
       </a>
     </div>
@@ -42,5 +42,3 @@ $this->registerJsFile('/js/publicacion/form.js', [
   ],
 ]);
 ?>
-
-

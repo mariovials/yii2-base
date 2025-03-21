@@ -27,7 +27,7 @@ use yii\helpers\Url;
         '<span class="mdi mdi-arrow-left"></span>Volver',
         ['/publicacion/redirect',
           'id' => $model->id],
-        ['class' => 'btn-flat']
+        ['class' => 'btn flat']
       ); ?>
     </div>
     <?php endif ?>

@@ -10,7 +10,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
   public $fieldClass = 'common\widgets\ActiveField';
 
   /**
-   * Registra el arcg
+   * Registra el asset
    */
   public function run()
   {

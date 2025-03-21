@@ -31,7 +31,7 @@ if (array_key_exists('nombre', $model->errors)) {
       </button>
     </div>
     <div class="opcion">
-      <a href="<?= Yii::$app->request->get('ref', '/autor') ?>" class="btn-flat solo">
+      <a href="<?= Yii::$app->request->get('ref', '/autor') ?>" class="btn flat solo">
         Cancelar
       </a>
     </div>

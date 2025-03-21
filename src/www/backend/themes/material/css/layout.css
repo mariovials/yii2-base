@@ -12,7 +12,7 @@
   height: 4rem;
   background-color: #FFF;
   border-bottom: 1px solid #EEE;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -3px 6px #000;
   position: relative;
 }
 #header > div {
@@ -38,20 +38,7 @@
   width: 100%;
   border-radius: 0.9em 0 0 0.9em;
 }
-#contenido::-webkit-scrollbar {
-  width: 10px;
-}
-#contenido::-webkit-scrollbar-track {
-  background: #F5F5F5;
-}
-#contenido::-webkit-scrollbar-thumb {
-  background: #CCC;
-  border-radius: 0.3em;
-}
-#contenido::-webkit-scrollbar-thumb:hover {
-  background: #BBB;
-}
-#contenido .ficha.sticky {
+#content .ficha.sticky {
   position: sticky;
   top: 0;
   z-index: 99999;
@@ -60,6 +47,19 @@
 #content {
   height: calc(100vh - 9em);
   overflow-y: auto;
+}
+#content::-webkit-scrollbar {
+  width: 10px;
+}
+#content::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+#content::-webkit-scrollbar-thumb {
+  background: #CCC;
+  border-radius: 0.3em;
+}
+#content::-webkit-scrollbar-thumb:hover {
+  background: #BBB;
 }
 
 #main {
@@ -77,6 +77,13 @@
   padding: 1.5em 1em 1em 1em;
   height: calc(100vh - 5rem);
   background-color: #FFF;
+}
+#lateral .ficha {
+  font-size: 0.9em;
+  box-shadow: none;
+}
+#lateral .ficha main {
+  padding: 0;
 }
 #lateral .divider {
   border: 1px solid #EEEEEE;
@@ -150,13 +157,21 @@
   border-radius: 0 0.6em 0.6em 0;
   padding: 1em 0.5em 1em 0;
   height: calc(100vh - 6em);
+  display: flex;
+  flex-direction: row;
+  min-width: fit-content
+}
+#menu ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2em;
+  min-width: 14em;
 }
 #menu ul li {
-  margin-bottom: 0.2rem;
 }
 #menu ul li.divider {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 0.5em 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0.1em 1.5em 0.1em 0em;
 }
 #menu ul li a {
   font-weight: 500;
@@ -177,30 +192,30 @@
   font-size: 0.9em;
   color: #757575;
 }
-#menu ul li a .chevron {
+#menu ul li a .badge {
   position: absolute;
-  right: 2.5em;
+  right: 0.5em;
   padding: 0.1em 0.5em;
   border-radius: 2em;
   font-weight: 700;
   font-size: 0.9em;
   color: #757575;
 }
-#menu ul li a .chevron:hover {
+#menu ul li a .badge:hover {
   background: rgba(0, 0, 0, 0.0666666667);
 }
-#menu ul li a .chevron .mdi {
+#menu ul li a .badge .mdi {
   margin-right: 0;
 }
 #menu ul li a .mdi {
   margin-right: 0.3em;
   font-size: 1.6em;
 }
-#menu ul li a.activo {
+#menu ul li.activo > a {
   background: rgba(96, 125, 139, 0.2);
   color: #424242;
 }
-#menu ul li a.activo .numero {
+#menu ul li.activo > a .numero {
   background: rgba(0, 0, 0, 0.1333333333);
   color: #455A64;
 }
@@ -208,29 +223,18 @@
   background: rgba(96, 125, 139, 0.1333333333);
 }
 #menu ul li ul {
-  margin: -2em 0em 1em 1em;
-  border-left: 2px solid #CFD8DC;
-  padding: 2.2em 0.5em 0em 0.2em;
-  transition: all 400ms;
-  overflow: hidden;
+  margin-top: 0.2em;
 }
-#menu ul li ul.cerrado {
-  height: 0px !important;
-  border-color: #ECEFF1;
-  margin-bottom: 0;
-  transition: all 400ms;
-}
+
 #menu ul li ul li a {
-  padding: 0.4em 2.2em 0.4em 1em;
-  font-size: 0.9em;
-  border-radius: 2em;
+  padding: 0.5em 2.2em 0.5em 2.2em;
+  border-radius: 0 2em 2em 0;
   line-height: 1em;
 }
 #menu ul li ul li a i.mdi {
   font-size: 1.3em;
 }
-#menu ul li ul li a.activo {
-  background: #CFD8DC;
+#menu ul li ul li.activo a {
 }
 #menu ul li ul li:last-child {
   margin-bottom: 0;

@@ -8,7 +8,7 @@ use frontend\components\Controller;
  * Sobre controller
  * @author Mario Vial <mariovials@gmail.cl> 2023/04/15 12:12
  */
-class SobreController extends Controller
+class NoticiaController extends Controller
 {
   public function actionLista()
   {

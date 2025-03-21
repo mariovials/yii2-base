@@ -12,7 +12,7 @@ class AppAsset extends AssetBundle
   public $basePath = '@webroot';
   public $baseUrl = '@web';
   public $css = [
-    'css/styles.css?v=3',
+    'css/styles.css?v=1',
   ];
   public $js = [
     'js/main.js?v=1',

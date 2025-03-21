@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 $this->breadcrumb = [
   ['label' => 'Usuarios', 'url' => ['usuario/lista']],
-  ['label' => $model->nombre, 'url' => $model->url],
+  $model->nombre
 ];
 $this->opciones[] = Html::a(
   '<span class="mdi mdi-delete"></span>Eliminar',

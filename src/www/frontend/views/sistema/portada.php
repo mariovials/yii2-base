@@ -3,32 +3,9 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use common\models\Publicacion;
 
-$periodos = Publicacion::find()->select('periodo')->distinct()->orderBy('periodo DESC')->column();
 ?>
 
 <div class="wrapper">
-  <?php foreach ($periodos as $periodo):
-  $publicaciones = Publicacion::find()
-    ->where(['periodo' => $periodo])
-    ->orderBy('periodo, mes, dia')
-    ->all();
-  ?>
-  <div class="periodo"><?= $periodo ?></div>
-  <ul id="lista">
-    <?php foreach ($publicaciones as $publicacion): ?>
-    <li class="item">
-      <a href="<?= Url::to(['/publicacion/ver', 'slug' => $publicacion->slug]) ?>">
-        <?php if ($publicacion->portada): ?>
-        <img src="<?= $publicacion->portada->rutaWeb ?>" alt="">
-        <?php else: ?>
-        <img src="https://placehold.co/800x600?text=<?= $publicacion->nombre ?>" alt="">
-        <?php endif ?>
-      </a>
-    </li>
-    <?php endforeach ?>
-  </ul>
-
-<?php endforeach ?>
 </div>
 
 <style>

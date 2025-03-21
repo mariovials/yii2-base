@@ -7,6 +7,7 @@ $cssClass = Inflector::camel2id(StringHelper::basename($generator->modelClass));
 echo "<?php\n";
 ?>
 use common\widgets\ActiveForm;
+use yii\helpers\Url;
 
 $attributes = $attributes ?? array_keys($model->attributes);
 ?>
@@ -29,7 +30,7 @@ $attributes = $attributes ?? array_keys($model->attributes);
       </button>
     </div>
     <div class="opcion">
-      <a href="<?= '<?=' ?> Yii::$app->request->get('from', '/<?= $cssClass ?>') ?>" class="btn-flat solo">
+      <a href="<?= '<?=' ?> Yii::$app->request->get('from', Url::to(['/<?= $cssClass ?>'])) ?>" class="btn flat solo">
         Cancelar
       </a>
     </div>

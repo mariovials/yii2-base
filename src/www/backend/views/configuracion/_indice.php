@@ -23,7 +23,7 @@ $opciones = $opciones ?? [];
 
       <?php if (in_array('agregar', $opciones)): ?>
       <div class="opcion">
-        <a href="<?= Url::to(['/configuracion/agregar']) ?>" class="btn-flat">
+        <a href="<?= Url::to(['/configuracion/agregar']) ?>" class="btn flat">
           <span class="mdi mdi-plus-thick"></span> Agregar
         </a>
       </div>

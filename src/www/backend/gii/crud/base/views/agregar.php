@@ -9,29 +9,29 @@ use yii\helpers\StringHelper;
 $baseName = StringHelper::basename($generator->modelClass);
 $cssClass = Inflector::camel2id($baseName);
 $textClass = Inflector::camel2words($baseName);
+$tableSchema = $generator->getTableSchema();
 
 echo "<?php\n";
 ?>
+
 $this->title = 'Agregar <?= $textClass ?>';
+$this->icono = '<?= $generator->icono ?>';
+$this->breadcrumb = [
+  ['label' => '<?= $textClass ?>', 'url' => ['/<?= $cssClass ?>']],
+  'Agregar',
+];
+
 ?>
 
 <div class="<?= $cssClass ?> agregar">
 
-  <?= '<?=' ?> $this->render('_indice') ?>
-
-  <div class="ficha accion">
-    <header>
-      <div class="principal">
-        <div class="icono"> <span class="mdi mdi-plus-thick"></span> </div>
-        <div class="titulo">
-          <div class="nombre">
-            Agregar <?= $textClass . "\n" ?>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
-
-  <?= '<?=' ?> $this->render('_form', ['model' => $model]); ?>
+  <?= '<?=' ?> $this->render('_form', [
+    'model' => $model,
+    'attributes' => [
+<?php foreach ($tableSchema->columns as $column) {
+  echo "      '{$column->name}',\n";
+} ?>
+    ],
+  ]); ?>
 
 </div>

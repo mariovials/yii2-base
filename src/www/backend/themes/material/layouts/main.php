@@ -37,7 +37,7 @@ ThemeAsset::register($this);
       <div class="derecha">
         <ul id="botones-usuario">
           <li>
-            <a href="<?= Yii::$app->urlManagerFrontend->createAbsoluteUrl('/') ?>"
+            <a href="<?= Yii::$app->urlManagerFrontend->createAbsoluteUrl(['/']) ?>"
               target="_blank" class="btn solo">
               <i class="mdi mdi-web"></i>
             </a>
@@ -73,7 +73,11 @@ ThemeAsset::register($this);
 
             <div id="head">
               <div class="icono">
-                <span class="mdi mdi-circle"></span>
+                <?php if (Yii::$app->request->get('from')): ?>
+                  <?= Html::a('<span class="mdi mdi-arrow-left"></span>', Yii::$app->request->get('from')) ?>
+                <?php else: ?>
+                  <span class="mdi mdi-<?= $this->icono ?>"></span>
+                <?php endif ?>
               </div>
               <?= Breadcrumb::widget(['links' => $this->breadcrumb]) ?>
             </div>
@@ -84,16 +88,28 @@ ThemeAsset::register($this);
           </div>
 
           <div id="lateral">
-            <?php
-            foreach ($this->opciones as $item) {
-              if ($item == 'divider') {
-                echo '<div class="divider"></div>';
-              } else {
-                echo $item;
+            <div class="principal">
+              <?php
+              foreach ($this->opciones as $item) {
+                if ($item == 'divider') {
+                  echo '<div class="divider"></div>';
+                } else {
+                  echo $item;
+                }
               }
-            }
-            ?>
-            <?= $this->params['lateral'] ?? ''; ?>
+              ?>
+            </div>
+            <div class="detalles">
+              <?php
+              foreach ($this->lateral as $item) {
+                if ($item == 'divider') {
+                  echo '<div class="divider"></div>';
+                } else {
+                  echo $item;
+                }
+              }
+              ?>
+            </div>
           </div>
 
         </div>

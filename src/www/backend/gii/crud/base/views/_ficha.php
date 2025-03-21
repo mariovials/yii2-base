@@ -20,60 +20,38 @@ if (empty($safeAttributes)) {
 
 echo "<?php\n";
 ?>
-use yii\helpers\Url;
-
 $opciones = $opciones ?? [];
 ?>
 
 <div class="ficha <?= $cssClass ?>" data-id="<?= '<?=' ?> $model->id ?>">
 
-  <?= '<?=' ?> $this->render('_header', ['model' => $model, 'link' => false]) ?>
+  <header>
+    <div class="principal">
+      <div class="icono"> <span class="mdi mdi-<?= $generator->icono ?>"></span> </div>
+      <div class="titulo">
+        <div class="nombre">
+        <?= '<?=' ?> $model-><?= $generator->getNameAttribute() ?>; ?>
+        <div class="descripcion">
+        </div>
+      </div>
+    </div>
+  </header>
 
   <main>
 <?php
 foreach ($tableSchema->columns as $column) {
   if ($column->autoIncrement | !in_array($column->name, $safeAttributes))
     continue;
+  if (in_array($column->name, ['fecha_creacion', 'fecha_edicion']))
+    continue;
 ?>
     <div class="fila">
       <div class="campo">
-        <div class="label">
-          <?= '<?=' ?> $model->getAttributeLabel('<?= $column->name ?>') ?>
-        </div>
-        <div class="value">
-          <?= '<?=' ?> $model-><?= $column->name ?> ?>
-        </div>
+        <div class="label"> <?= '<?=' ?> $model->getAttributeLabel('<?= $column->name ?>') ?> </div>
+        <div class="value"> <?= '<?=' ?> $model-><?= $column->name ?> ?> </div>
       </div>
     </div>
 <?php } ?>
   </main>
-
-  <footer>
-    <div class="opciones">
-
-      <?= '<?php' ?> if (in_array('editar', $opciones)): ?>
-      <div class="opcion">
-        <a class="btn" href="<?= '<?=' ?> Url::to(['/<?= $cssClass ?>/editar',
-          'id' => $model->id,
-          'from' => Url::current()]) ?>">
-          <span class="mdi mdi-pencil"></span>
-          Editar
-        </a>
-      </div>
-      <?= '<?php' ?> endif; ?>
-
-      <?= '<?php' ?> if (in_array('eliminar', $opciones)): ?>
-      <div class="opcion">
-        <a class="btn" href="<?= '<?=' ?> Url::to(['/<?= $cssClass ?>/eliminar',
-          'id' => $model->id,
-          'from' => Url::current()]) ?>">
-          <span class="mdi mdi-delete"></span>
-          Eliminar
-        </a>
-      </div>
-      <?= '<?php' ?> endif; ?>
-
-    </div>
-  </footer>
 
 </div>
