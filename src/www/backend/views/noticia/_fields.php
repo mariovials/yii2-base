@@ -1,5 +1,7 @@
 <?php
+
 $attributes = $attributes ?? array_keys($model->attributes);
+
 ?>
 
 <div class="filas">

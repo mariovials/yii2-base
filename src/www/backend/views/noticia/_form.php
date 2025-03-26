@@ -23,7 +23,7 @@ $attributes = $attributes ?? array_keys($model->attributes);
       </button>
     </div>
     <div class="opcion">
-      <a href="<?= Yii::$app->request->get('from', Url::to(['/noticia'])) ?>" class="btn flat solo">
+      <a href="<?= Yii::$app->request->get('from', Url::to(['lista'])) ?>" class="btn flat solo">
         Cancelar
       </a>
     </div>

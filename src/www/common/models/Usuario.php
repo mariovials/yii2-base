@@ -22,6 +22,8 @@ class Usuario extends ActiveRecord implements IdentityInterface
     self::ESTADO_INACTIVO  => 'Inactivo',
   ];
 
+  public $contrasena_verificacion = '';
+
   public function estado()
   {
     return $this::ESTADOS[$this->estado];
@@ -51,6 +53,20 @@ class Usuario extends ActiveRecord implements IdentityInterface
         self::ESTADO_ACTIVO,
         self::ESTADO_INACTIVO,
         self::ESTADO_BORRADO]],
+
+      ['contrasena_verificacion', 'compare', 'compareAttribute' => 'contrasena'],
+    ];
+  }
+
+  public function attributeLabels(): array
+  {
+    return [
+      'nombre' => 'Nombre',
+      'apellido' => 'Apellido',
+      'correo_electronico' => 'Correo electrónico',
+      'contrasena' => 'Contraseña',
+      'contrasena_verificacion' => 'Repetir contraseña',
+      'estado' => 'Estado',
     ];
   }
 

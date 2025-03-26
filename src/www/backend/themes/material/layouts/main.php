@@ -30,6 +30,7 @@ ThemeAsset::register($this);
       <div class="izquierda">
         <a id="logo" href="<?= Yii::$app->urlManagerBackend->createAbsoluteUrl('/') ?>">
           <img src="<?= Url::to(['/img/logo.png']) ?>" alt="">
+          ADMIN
         </a>
       </div>
       <div class="central">
@@ -76,7 +77,9 @@ ThemeAsset::register($this);
                 <?php if (Yii::$app->request->get('from')): ?>
                   <?= Html::a('<span class="mdi mdi-arrow-left"></span>', Yii::$app->request->get('from')) ?>
                 <?php else: ?>
-                  <span class="mdi mdi-<?= $this->icono ?>"></span>
+                  <div class="boton">
+                    <span class="mdi mdi-<?= $this->icono ?>"></span>
+                  </div>
                 <?php endif ?>
               </div>
               <?= Breadcrumb::widget(['links' => $this->breadcrumb]) ?>

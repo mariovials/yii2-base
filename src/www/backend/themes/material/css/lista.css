@@ -1,13 +1,8 @@
-:root {
-  --color-1: #00897b;
-  --color-1-dark: #00796B;
-  --background-1: #E0F2F1;
-}
-
-div.lista.compacta .items .item {
+.lista.compacta .items .item {
   height: 2.6em;
 }
-div.lista > header {
+
+.lista > header {
   display: flex;
   justify-content: space-between;
   font-size: 0.85em;
@@ -16,19 +11,31 @@ div.lista > header {
   letter-spacing: -0.02em;
   padding: 0 1rem;
 }
-div.lista > header .cantidad {
+.lista > header .cantidad {
   color: #9E9E9E;
 }
-div.lista > header .sorter {
+.lista > header .sorter {
   display: flex;
 }
-div.lista .items .item {
+.lista .items .item {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 0.4em 1em;
 }
-div.lista .items .item .informacion {
+.lista .items .item:hover {
+  background-color: #f5f6f7;
+}
+.lista .items .item:hover .btn {
+  background-color: hsl(204 15 91)
+}
+.lista .items .item:hover .btn:hover {
+  background-color: hsl(204 15 90)
+}
+.lista .items .item:hover .btn:active {
+  background-color: hsl(204 15 89)
+}
+.lista .items .item .informacion {
   width: 100%;
   display: flex;
   align-items: center;
@@ -36,43 +43,42 @@ div.lista .items .item .informacion {
   flex-direction: row;
   justify-content: flex-start;
 }
-div.lista .items .item .informacion .icono {
+.lista .items .item .informacion .icono {
   padding: 0 0.6em 0 0;
   font-size: 1.5em;
-  color: #00796B;
 }
-div.lista .items .item .informacion .numero {
+.lista .items .item .informacion .numero {
   padding: 0 0.6em 0 0;
   font-size: 1.5em;
   font-weight: bold;
 }
-div.lista .items .item .informacion .imagen {
+.lista .items .item .informacion .imagen {
   overflow: hidden;
   padding: 0.5em 1em 0.5em 0;
 }
-div.lista .items .item .informacion .imagen img {
+.lista .items .item .informacion .imagen img {
   width: 3em;
   height: 3em;
   border-radius: 50%;
   display: block;
 }
-div.lista .items .item .informacion .texto {
+.lista .items .item .informacion .texto {
   padding: 0.1em 0;
 }
-div.lista .items .item .informacion .texto .primario {
+.lista .items .item .informacion .texto .primario {
   font-weight: 500;
   color: #212121;
   display: flex;
   align-items: center;
 }
-div.lista .items .item .informacion .texto .primario a {
+.lista .items .item .informacion .texto .primario a {
   font-weight: 700;
 }
-div.lista .items .item .informacion .texto .primario .campo {
+.lista .items .item .informacion .texto .primario .campo {
   margin-right: 1em;
   margin-bottom: 0;
 }
-div.lista .items .item .informacion .texto .secundario {
+.lista .items .item .informacion .texto .secundario {
   font-size: 0.9em;
   font-weight: 400;
   color: #424242;
@@ -81,34 +87,34 @@ div.lista .items .item .informacion .texto .secundario {
   max-height: 1.6em;
   overflow: hidden;
 }
-div.lista .items .item .informacion .texto .secundario .campo {
+.lista .items .item .informacion .texto .secundario .campo {
   margin-right: 1em;
 }
-div.lista .items .item .informacion .texto .label {
+.lista .items .item .informacion .texto .label {
   color: #999;
   display: inline-block;
   font-weight: 400;
 }
-div.lista .items .item .opciones {
+.lista .items .item .opciones {
   display: flex;
   align-items: center;
   column-gap: 0.3em;
 }
-div.lista .items .item .opciones .opcion .btn.solo {
+.lista .items .item .opciones .opcion .btn.solo {
   padding: 0em 1em 0em 1em;
   padding: 0em 0.5em 0em 0.5em;
 }
-div.lista .items .item .opciones .opcion .btn {
+.lista .items .item .opciones .opcion .btn {
   font-weight: 500;
   padding: 0em 1.2em 0em 1.2em;
 }
-div.lista .items .item .opciones .opcion {
+.lista .items .item .opciones .opcion {
   white-space: nowrap;
 }
-div.lista .items .item .opciones .opcion.grande a {
+.lista .items .item .opciones .opcion.grande a {
   font-weight: 500;
 }
-div.lista .items .item.no-leida {
+.lista .items .item.no-leida {
   box-shadow: 0 0.1em 0.2em -0.1em #000;
   border-radius: 0.3em;
   background: rgba(77, 182, 172, 0.0666666667);

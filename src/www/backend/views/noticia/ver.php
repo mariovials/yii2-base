@@ -6,7 +6,7 @@ use yii\helpers\Url;
 $this->title = $model->titulo;
 $this->icono = 'circle';
 $this->breadcrumb = [
-  ['label' => 'Noticia', 'url' => ['/noticia']],
+  ['label' => 'Noticias', 'url' => ['/noticia']],
   $this->title,
 ];
 $this->opciones[] = Html::a(

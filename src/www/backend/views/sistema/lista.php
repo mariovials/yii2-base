@@ -1,29 +1,16 @@
 <?php
 
-use common\models\Publicacion;
-use common\models\Autor;
-use common\models\Editor;
-use common\models\Idioma;
-use common\models\Persona;
-use common\models\Editorial;
 use yii\helpers\Url;
 
 $this->title = 'Admin';
+
+$this->breadcrumb = [
+  'Panel de administración',
+];
+
 ?>
 
 <div class="site index">
-
-  <div class="ficha">
-    <header>
-      <div class="principal">
-        <div class="icono"> <i class="mdi mdi-view-dashboard"></i> </div>
-        <div class="titulo">
-          <div class="nombre"> Panel de administración </div>
-          <div class="descripcion"> </div>
-        </div>
-      </div>
-    </header>
-  </div>
 
   <div class="contadores">
 
@@ -107,10 +94,11 @@ $this->title = 'Admin';
   .contadores {
     display: flex;
     flex-wrap: wrap;
+    padding: 1em;
   }
   .contador {
     color: #111;
-    background: #FFF;
+    background: hsl(207 49% 93% / 1);
     display: flex;
     width: 16em;
     height: 8em;

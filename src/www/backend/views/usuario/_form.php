@@ -3,9 +3,11 @@
 use common\widgets\ActiveForm;
 use yii\helpers\Url;
 
+$attributes = $attributes ?? array_keys($model->attributes);
+
 ?>
 
-<div class="form configuracion">
+<div class="form">
 
   <?php $form = ActiveForm::begin(); ?>
 
@@ -23,7 +25,8 @@ use yii\helpers\Url;
       </button>
     </div>
     <div class="opcion">
-      <a href="<?= Url::to(Yii::$app->request->get('from', ['lista'])) ?>" class="btn flat solo">
+      <a href="<?= Yii::$app->request->get('from', Url::to(['/usuario'])) ?>"
+        class="btn flat solo">
         Cancelar
       </a>
     </div>

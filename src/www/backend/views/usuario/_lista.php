@@ -1,5 +1,8 @@
 <?php
+
+use common\helpers\Html;
 use yii\helpers\Url;
+
 ?>
 
 <div class="item">
@@ -7,7 +10,7 @@ use yii\helpers\Url;
     <div class="texto">
       <div class="primario">
         <div class="campo">
-          <a href="<?= Url::to(['usuario/ver', 'id' => $model->id, 'to' => Url::current()]) ?>">
+          <a href="<?= Url::to(['usuario/ver', 'id' => $model->id, 'from' => Url::current()]) ?>">
             <?= $model->nombre ?>
             <?= $model->apellido ?>
           </a>
@@ -20,14 +23,20 @@ use yii\helpers\Url;
   </div>
   <div class="opciones">
     <div class="opcion">
-      <a class="btn" href="<?= Url::to(['usuario/editar', 'id' => $model->id, 'to' => Url::current()]) ?>">
+      <a class="btn" href="<?= Url::to(['editar', 'id' => $model->id,
+        'from' => Url::current(),
+        'to' => Url::current()]) ?>">
         <span class="mdi mdi-pencil"></span> Editar
       </a>
     </div>
     <div class="opcion">
-      <a class="btn solo" href="<?= Url::to(['usuario/editar', 'id' => $model->id, 'to' => Url::current()]) ?>">
-        <span class="mdi mdi-delete"></span>
-      </a>
+      <?= Html::a(
+        '<span class="mdi mdi-delete"></span>',
+        ['eliminar', 'id' => $model->id, 'to' => Url::current()],
+        ['class' => 'btn solo', 'data' => [
+          'method' => 'post',
+          'confirm' => '¿Está seguro de que desea eliminar este usuario?',
+        ]]); ?>
     </div>
   </div>
 </div>

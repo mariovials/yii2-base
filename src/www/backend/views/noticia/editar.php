@@ -1,9 +1,8 @@
 <?php
 
 $this->title = 'Editar ' . $model->titulo;
-$this->icono = 'circle';
 $this->breadcrumb = [
-  ['label' => 'Noticia', 'url' => ['/noticia']],
+  ['label' => 'Noticias', 'url' => ['/noticia']],
   ['label' => $model->titulo, 'url' => $model->url],
   'Editar',
 ];

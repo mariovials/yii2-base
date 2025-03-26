@@ -1,42 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 #pagina {
-  font-family: "Noto Sans", "Tahoma", sans-serif;
-  background: #f2f5f7;
+  background: #ECEFF1;
   padding: 0 0 1em 0;
 }
-
+#pagina * {
+  font-family: "Noto Sans", "Tahoma", sans-serif;
+}
 #header {
   display: flex;
   justify-content: space-between;
   height: 4rem;
-  background-color: #FFF;
-  border-bottom: 1px solid #EEE;
-  box-shadow: 0 -3px 6px #000;
   position: relative;
 }
 #header > div {
   display: flex;
 }
+#header > .izquierda {
+  display: flex;
+  align-items: center;
+  width: 15rem;
+}
+
+a#logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  font-weight: 900;
+  color: #616161;
+  letter-spacing: -0.03em;
+  font-size: 1.1em;
+  width: 100%;
+  padding: 0.4em 1em;
+}
 
 #logo img {
-  height: 4rem;
+  height: 3rem;
 }
 
 #principal {
   display: flex;
+  column-gap: 1em;
 }
 
 #cuerpo {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0 0 0 1em;
+  background-color: #FFF;
+  border-radius: 0.9em 0 0 0.9em;
+
 }
 
 #contenido {
   width: 100%;
-  border-radius: 0.9em 0 0 0.9em;
 }
 #content .ficha.sticky {
   position: sticky;
@@ -45,8 +62,9 @@
 }
 
 #content {
-  height: calc(100vh - 9em);
+  height: calc(100vh - 8.6em);
   overflow-y: auto;
+  border-top: 1px solid #EEE;
 }
 #content::-webkit-scrollbar {
   width: 10px;
@@ -67,7 +85,6 @@
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: stretch;
-  column-gap: 1em;
 }
 
 #lateral {
@@ -76,11 +93,12 @@
   max-width: 16rem;
   padding: 1.5em 1em 1em 1em;
   height: calc(100vh - 5rem);
-  background-color: #FFF;
+  border-left: 1px solid #EEE;
 }
 #lateral .ficha {
   font-size: 0.9em;
   box-shadow: none;
+  background: none;
 }
 #lateral .ficha main {
   padding: 0;
@@ -153,13 +171,14 @@
 }
 
 #menu {
-  min-width: 14rem;
   border-radius: 0 0.6em 0.6em 0;
   padding: 1em 0.5em 1em 0;
   height: calc(100vh - 6em);
   display: flex;
   flex-direction: row;
-  min-width: fit-content
+  max-width: 14rem;
+  min-width: 14rem;
+  width: 14rem;
 }
 #menu ul {
   display: flex;
@@ -308,7 +327,7 @@
 
 
 #head {
-  padding: 0.6rem 1rem 0.6rem 1.3rem;
+  padding: 0.6rem 1rem 0.6rem 0.7rem;
   display: flex;
   align-items: center;
   z-index: 10;
@@ -320,4 +339,15 @@
 }
 #head .mdi {
   font-size: 1.4em;
+  vertical-align: text-bottom;
+}
+#head .icono .boton {
+  padding: 0.4rem 0.6em;
+}
+#head .icono a {
+  border-radius: 2em;
+  padding: 0.6rem;
+}
+#head .icono a:hover {
+  background-color: #F7F7F7;
 }

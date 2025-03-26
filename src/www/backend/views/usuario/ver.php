@@ -3,9 +3,10 @@
 use common\helpers\Html;
 use yii\helpers\Url;
 
+$this->title = $model->nombreCompleto;
 $this->breadcrumb = [
-  ['label' => 'Usuarios', 'url' => ['usuario/lista']],
-  $model->nombre
+  ['label' => 'Usuarios', 'url' => ['lista']],
+  $this->title
 ];
 $this->opciones[] = Html::a(
   '<span class="mdi mdi-delete"></span>Eliminar',
@@ -14,6 +15,10 @@ $this->opciones[] = Html::a(
     'method' => 'post',
     'confirm' => '¿Está seguro de que desea eliminar este usuario?',
   ]]);
+$this->opciones[] = Html::a(
+  '<span class="mdi mdi-lock"></span> Cambiar contraseña',
+  ['cambiar-contrasena', 'id' => $model->id, 'from' => Url::current()],
+  ['class' => 'btn flat']);
 ?>
 
 <div class="ficha">

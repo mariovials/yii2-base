@@ -1,8 +1,20 @@
 <?php
+
 use common\models\Configuracion;
 use backend\widgets\ListView;
 use common\helpers\Html;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Url;
+
+$this->title = 'Configuración';
+$this->icono = 'cog';
+$this->breadcrumb = [
+  'Configuración',
+];
+$this->opciones[] = Html::a(
+  '<span class="mdi mdi-plus"></span>Agregar',
+  ['agregar', 'from' => Url::current()],
+  ['class' => 'btn']);
 
 $configuraciones = [
   [
@@ -10,38 +22,22 @@ $configuraciones = [
     'icono' => 'cogs',
     'attributes' => ['nombre', 'valor'],
     'codigos' => [
+      'instagram',
     ],
   ],
 ];
 
-$this->title = 'Configuración';
-$this->breadcrumb = [
-  ['label' => $this->title, 'url' => ['/configuracion']],
-];
-$this->opciones[] = Html::a(
-  '<span class="mdi mdi-plus"></span>Agregar',
-  ['agregar'],
-  ['class' => 'btn']);
 ?>
 
 <div class="configuracion indice">
 
   <?php foreach ($configuraciones as $configuracion): ?>
-  <div class="ficha lista">
-    <header>
-      <div class="principal">
-        <div class="icono"> <i class="mdi mdi-<?= $configuracion['icono'] ?>"></i> </div>
-        <div class="titulo">
-          <div class="nombre"> <?= $configuracion['nombre'] ?> </div>
-        </div>
-      </div>
-    </header>
+  <div class="lista">
     <main>
       <?= ListView::widget([
         'layout' => '{items}',
         'dataProvider' => new ActiveDataProvider([
-          'query' => Configuracion::find()
-            ->where(['codigo' => $configuracion['codigos']]),
+          'query' => Configuracion::find()->where(['codigo' => $configuracion['codigos']]),
           'sort' => [
             'attributes' => [
               'nombre',

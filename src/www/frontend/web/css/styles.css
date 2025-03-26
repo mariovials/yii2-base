@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -158,6 +158,10 @@ label {
   justify-content: center;
   align-items: center;
 }
+.super {
+  vertical-align: super;
+  font-size: 0.6em;
+}
 
 .bold {
   font-weight: bold;
@@ -170,15 +174,6 @@ html body {
 #pagina {
   font-family: "Poppins", "Tahoma", sans-serif;
   background-color: #EEE;
-}
-
-#wrapper {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  max-width: 80rem;
-  margin: 0 auto;
-  overflow-y: hidden;
 }
 
 .wrapper {
@@ -208,27 +203,36 @@ nav {
   max-height: 5em;
 }
 
-#content {
-  background-color: #DDD;
-  min-height: calc(200vh);
-  width: 100%;
-}
-
 #menu {
-  background-color: #DDD;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: calc(100vw - 100%);
+  left: 0%;
+  top: 0;
+  padding: 1rem;
+  z-index: 1;
 }
 #menu > li {
 }
 #menu > li > a {
-  padding: 1em 1em;
   display: block;
-  font-size: 1.6em;
   text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.6em;
   font-weight: 500;
+  color: #FFF;
 }
 
 #menu-wrapper {
   display: flex;
+}
+
+#content {
+  background-color: #DDD;
+  height: fit-content;
+  width: 100%;
 }
 
 #footer-content {
@@ -239,10 +243,8 @@ nav {
 }
 
 #footer {
-  position: sticky;
-  bottom: 0;
   background: #EEE;
-  height: 3em;
+  height: 20em;
 }
 #footer a {
   font-weight: 600;

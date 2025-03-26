@@ -33,9 +33,10 @@
  */
 .ficha {
   border-radius: 0.6em;
-  margin-bottom: 1em;
-  background: #FFF;
-  box-shadow: 0 0.1em 0.4em -0.3em #78909c;
+  /* margin: 1em; */
+  /* border: 1px solid #DDD; */
+  /* box-shadow: 0 0.1em 0.3em -0.25em #000; */
+  /* background: #FAFAFA; */
 }
 .ficha > header {
   padding: 1em 1.4em 1em 1.4em;
@@ -231,23 +232,3 @@
   line-height: 1em;
   margin-right: 0.5rem;
 }
-
-.ficha.lista > header {
-  font-size: 1em;
-  padding: 1.2em 1.5em 0em 1.5em;
-  margin-bottom: 0;
-}
-.ficha.lista main {
-  padding: 1em;
-}
-.ficha.lista .items .item .informacion .campo {
-  margin-bottom: 0;
-}
-.ficha.lista.con-filtro > main {
-  padding: 0;
-}
-.ficha.lista.con-filtro > main > .lista {
-  padding: 0 1em 1em 1em;
-}
-
-/*# sourceMappingURL=ficha.css.map */

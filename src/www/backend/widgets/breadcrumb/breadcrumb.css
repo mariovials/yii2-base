@@ -1,7 +1,7 @@
 .breadcrumb {
   display: inline-flex;
   align-items: center;
-  height: 2.8rem;
+  height: 2.4rem;
   overflow: hidden;
 }
 .breadcrumb > li {

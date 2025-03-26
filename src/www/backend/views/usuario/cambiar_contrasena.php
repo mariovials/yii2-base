@@ -1,21 +1,21 @@
 <?php
 
-$this->title = 'Editar ' . $model->nombre;
-
 $this->breadcrumb = [
-  ['label' => 'Configuración', 'url' => ['/configuracion']],
+  ['label' => 'Usuarios', 'url' => ['/usuario']],
   ['label' => $model->nombre, 'url' => $model->url],
-  'Editar',
+  'Cambiar contraseña',
 ];
+
+$model->contrasena = '';
 
 ?>
 
-<div class="configuracion editar">
+<div class="usuario-editar">
 
   <?= $this->render('_form', [
     'model' => $model,
     'attributes' => [
-      'valor',
+      'contrasena',
     ],
   ]); ?>
 

@@ -55,9 +55,20 @@ class UsuarioController extends Controller
     if ($this->request->isPost
       && $model->load($this->request->post())
       && $model->save()) {
-      return $this->redirect(['ver', 'id' => $model->id]);
+      return $this->redirect($this->request->get('to', ['ver', 'id' => $model->id]));
     }
     return $this->render('editar', ['model' => $model]);
+  }
+
+  public function actionCambiarContrasena($id)
+  {
+    $model = Usuario::findOne($id);
+    if ($this->request->isPost
+      && $model->load($this->request->post())
+      && $model->save()) {
+      return $this->redirect($this->request->get('to', ['ver', 'id' => $model->id]));
+    }
+    return $this->render('cambiar_contrasena', ['model' => $model]);
   }
 
   public function actionEliminar($id)
