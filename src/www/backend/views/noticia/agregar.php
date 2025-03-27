@@ -3,7 +3,7 @@
 $this->title = 'Agregar Noticia';
 $this->icono = 'circle';
 $this->breadcrumb = [
-  ['label' => 'Noticia', 'url' => ['/noticia']],
+  ['label' => 'Noticias', 'url' => ['/noticia']],
   'Agregar',
 ];
 
