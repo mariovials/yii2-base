@@ -18,10 +18,10 @@ return [
   ],
   'controllerMap' => [
     'migrate' => [
-      'class' => 'console\controllers\MigrateController',
+      'class' => console\controllers\MigrateController::class,
     ],
     'fixture' => [
-      'class' => \yii\console\controllers\FixtureController::class,
+      'class' => yii\console\controllers\FixtureController::class,
       'namespace' => 'common\fixtures',
     ],
   ],
@@ -29,7 +29,7 @@ return [
     'log' => [
       'targets' => [
         [
-          'class' => \yii\log\FileTarget::class,
+          'class' => yii\log\FileTarget::class,
           'levels' => ['error', 'warning'],
         ],
       ],

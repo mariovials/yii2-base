@@ -35,7 +35,7 @@ class Generator extends \yii\gii\Generator
     const JUNCTION_RELATION_VIA_MODEL = 'model';
 
     public $db = 'db';
-    public $ns = 'app\models';
+    public $ns = 'common\models';
     /**
      * @var string
      */
