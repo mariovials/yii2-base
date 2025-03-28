@@ -94,22 +94,14 @@ ThemeAsset::register($this);
             <div class="principal">
               <?php
               foreach ($this->opciones as $item) {
-                if ($item == 'divider') {
-                  echo '<div class="divider"></div>';
-                } else {
-                  echo $item;
-                }
+                echo $item;
               }
               ?>
             </div>
             <div class="detalles">
               <?php
               foreach ($this->lateral as $item) {
-                if ($item == 'divider') {
-                  echo '<div class="divider"></div>';
-                } else {
-                  echo $item;
-                }
+                echo $item;
               }
               ?>
             </div>

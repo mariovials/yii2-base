@@ -12,6 +12,7 @@ sudo /etc/init.d/postgresql restart
 
 psql -U postgres
 
+CREATE database webleu;
 CREATE USER leu WITH PASSWORD 'leu';
 GRANT ALL PRIVILEGES ON DATABASE "webleu" to leu;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO leu;

@@ -17,7 +17,7 @@ echo "<?php\n";
 $this->title = 'Agregar <?= $textClass ?>';
 $this->icono = '<?= $generator->icono ?>';
 $this->breadcrumb = [
-  ['label' => '<?= $textClass ?>', 'url' => ['/<?= $cssClass ?>']],
+  ['label' => '<?= $textClass ?>s', 'url' => ['lista']],
   'Agregar',
 ];
 

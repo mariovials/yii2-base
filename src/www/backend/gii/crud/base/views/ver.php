@@ -16,22 +16,22 @@ echo "<?php\n";
 use common\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = $model->nombre;
+$this->title = $model-><?= $generator->getNameAttribute() ?>;
 $this->icono = '<?= $generator->icono ?>';
 $this->breadcrumb = [
-  ['label' => '<?= $textClass ?>', 'url' => ['/<?= $cssClass ?>']],
+  ['label' => '<?= $textClass ?>s', 'url' => ['lista']],
   $this->title,
 ];
 $this->opciones[] = Html::a(
-    '<span class="mdi mdi-pencil"></span> Editar',
-    ['/<?= $cssClass ?>/editar', 'id' => $model->id, 'from' => Url::current(), 'to' => Url::current()],
-    ['class' => 'btn']);
+  '<span class="mdi mdi-pencil"></span> Editar',
+  ['editar', 'id' => $model->id, 'from' => Url::current(), 'to' => Url::current()],
+  ['class' => 'btn']);
 $this->opciones[] = Html::a(
-    '<span class="mdi mdi-delete"></span> Eliminar',
-    ['/<?= $cssClass ?>/eliminar', 'id' => $model->id, 'from' => Url::current()],
-    ['class' => 'btn flat', 'data' => ['confirm' => '¿Está seguro?']]);
+  '<span class="mdi mdi-delete"></span> Eliminar',
+  ['eliminar', 'id' => $model->id, 'to' => Url::current()],
+  ['class' => 'btn flat', 'data' => ['confirm' => '¿Está seguro?']]);
 
-$this->params['lateral'] = $this->render('_detalles', ['model'=> $model]);
+$this->lateral[] = $this->render('_detalles', ['model'=> $model]);
 
 ?>
 

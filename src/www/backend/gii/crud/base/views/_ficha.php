@@ -20,7 +20,9 @@ if (empty($safeAttributes)) {
 
 echo "<?php\n";
 ?>
+
 $opciones = $opciones ?? [];
+
 ?>
 
 <div class="ficha <?= $cssClass ?>" data-id="<?= '<?=' ?> $model->id ?>">
@@ -29,10 +31,8 @@ $opciones = $opciones ?? [];
     <div class="principal">
       <div class="icono"> <span class="mdi mdi-<?= $generator->icono ?>"></span> </div>
       <div class="titulo">
-        <div class="nombre">
-        <?= '<?=' ?> $model-><?= $generator->getNameAttribute() ?>; ?>
-        <div class="descripcion">
-        </div>
+        <div class="nombre"> <?= '<?=' ?> $model-><?= $generator->getNameAttribute() ?>; ?> </div>
+        <div class="descripcion"> </div>
       </div>
     </div>
   </header>
@@ -42,7 +42,7 @@ $opciones = $opciones ?? [];
 foreach ($tableSchema->columns as $column) {
   if ($column->autoIncrement | !in_array($column->name, $safeAttributes))
     continue;
-  if (in_array($column->name, ['fecha_creacion', 'fecha_edicion']))
+  if (in_array($column->name, ['fecha_creacion', 'fecha_edicion', 'creado_por', 'editado_por']))
     continue;
 ?>
     <div class="fila">

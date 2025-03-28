@@ -19,12 +19,18 @@ if (empty($safeAttributes)) {
 }
 ?>
 
+<?= "<?php\n" ?>
+
+$this->lateral[] = '<div class="divider"></div>';
+
+?>
+
 <div class="ficha <?= $cssClass ?>" data-id="<?= '<?=' ?> $model->id ?>">
 
   <main>
 <?php
 foreach ($tableSchema->columns as $column) {
-  if (!in_array($column->name, ['fecha_creacion', 'fecha_edicion']))
+  if (!in_array($column->name, ['fecha_creacion', 'fecha_edicion', 'creado_por', 'editado_por']))
     continue;
 ?>
     <div class="fila">
@@ -33,7 +39,11 @@ foreach ($tableSchema->columns as $column) {
           <?= '<?=' ?> $model->getAttributeLabel('<?= $column->name ?>') ?>
         </div>
         <div class="value">
+<?php if ($column->type == 'timestamp'): ?>
           <?= '<?=' ?> Yii::$app->formatter->asDatetime($model-><?= $column->name ?>) ?>
+<?php else: ?>
+          <?= '<?=' ?> $model-><?= $column->name ?> ?>
+<?php endif ?>
         </div>
       </div>
     </div>

@@ -13,9 +13,10 @@ $textClass = Inflector::camel2words($baseName);
 
 echo "<?php\n";
 ?>
-use <?= $generator->modelClass ?>;
+
 use backend\widgets\ListView;
 use common\helpers\Html;
+use <?= $generator->modelClass ?>;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Url;
 
@@ -24,24 +25,27 @@ $this->icono = '<?= $generator->icono ?>';
 $this->breadcrumb = [ '<?= $textClass ?>s'];
 $this->opciones[] = Html::a(
   '<span class="mdi mdi-plus"></span> Agregar',
-  ['/<?= $cssClass ?>/agregar', 'from' => Url::current(), 'to' => Url::current()],
-  [ 'class' => 'btn'],
+  ['agregar', 'from' => Url::current(), 'to' => Url::current()],
+  ['class' => 'btn'],
 );
+
 ?>
 
-<div class="<?= $cssClass ?> indice">
+<div class="<?= $cssClass ?> lista">
 
-  <div class="ficha lista">
-    <main>
-      <?= '<?=' ?> ListView::widget([
-        'dataProvider' => new ActiveDataProvider([
-          'query' => <?= $baseName ?>::find(),
-          'sort' => ['attributes' => ['<?= $generator->getNameAttribute() ?>']],
-          'pagination' => ['pageSize' => 10],
-        ]),
-        'itemView' => '_lista',
-      ]); ?>
-    </main>
-  </div>
+  <?= '<?=' ?> ListView::widget([
+    'dataProvider' => new ActiveDataProvider([
+      'query' => <?= $baseName ?>::find(),
+      'sort' => ['attributes' => ['<?= $generator->getNameAttribute() ?>']],
+      'pagination' => ['pageSize' => 10],
+    ]),
+    'itemView' => '_lista',
+    'viewParams' => [
+      'opciones' => [
+        'editar',
+        'eliminar',
+      ],
+    ],
+  ]); ?>
 
 </div>

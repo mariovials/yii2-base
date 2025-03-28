@@ -27,7 +27,7 @@ echo "<?php\n";
 $this->title = 'Editar ' . $model-><?= $generator->getNameAttribute() ?>;
 $this->icono = '<?= $generator->icono ?>';
 $this->breadcrumb = [
-  ['label' => '<?= $textClass ?>', 'url' => ['/<?= $cssClass ?>']],
+  ['label' => '<?= $textClass ?>s', 'url' => ['lista']],
   ['label' => $model-><?= $generator->getNameAttribute() ?>, 'url' => $model->url],
   'Editar',
 ];
